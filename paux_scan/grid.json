@@ -1,7 +1,6 @@
 {
   "scan": {
-    "ne_ped": {"type": "range", "ymin":13, "ymax":15, "ndata":3},
-    "te_ped"  : {"type": "range", "ymin":1, "ymax":3, "ndata":3}
+    "pinj": {"type": "range", "ymin":20, "ymax":20, "ndata":1}
   },
 
   "const": {
@@ -17,20 +16,17 @@
     "xmid"    : 0.975,
 
     "ne_axis" : 27.6,
+    "ne_ped"  : 14.424,
     "ne_sep"  : 9.0,
     "te_axis" : 18.8,
+    "te_ped"  : 3.7455,
     "ti_axis" : 19.0,
-    "h98"     : 0.8,
-
-    "pinj"    : 40,
-    "f_pinj_e": 0.125
+    "h98"     : 0.8
  },
 
  "model": {
     "ti_ped"      : ["expr", "te_ped"                     ],
-    "ngw"         : ["base", {}                           ],
-    "pinj_e"      : ["expr", "pinj * f_pinj_e"            ],
-    "pinj_i"      : ["expr", "pinj * ( 1.0 - f_pinj_e ) " ]
+    "ngw"         : ["base", {}                           ]
   },
 
  "io": {
@@ -59,7 +55,6 @@
 
     "h98"         : ["fastran_init", "H98_TARGET" ],
 
-    "pinj_e"      : ["hcd_model"   , "INHCD_PE_0" ],
-    "pinj_i"      : ["hcd_model"   , "INHCD_PI_0" ]
+    "pinj"        : ["toric"       , "POWER_IC" ]
   }
 }

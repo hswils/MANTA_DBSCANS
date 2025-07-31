@@ -1,6 +1,6 @@
-rm -rf ips.err
-rm -rf ips.log
-rm -rf ips.out
-rm -rf run.log
-rm -rf summary
+rm -rf ips*
+rm -rf run.log*
+rm -rf dakota*
+rm -rf params.in.*
+rm -rf SUMMARY
 rm -rf SCAN
