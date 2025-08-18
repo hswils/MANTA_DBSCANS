@@ -40,6 +40,11 @@ jrf = rootgrp['j_rf'][-1,:]
 irf = rootgrp['irf'][-1]
 jtot = rootgrp['j_tot'][-1,:]
 
+fluxe = rootgrp['fluxe'][-1,:]
+fluxe_exp = rootgrp['fluxe_exp'][-1,:]
+fluxi = rootgrp['fluxi'][-1,:]
+fluxi_exp = rootgrp['fluxi_exp'][-1,:]
+
 fig, ((ax1,ax2,ax3),(ax4,ax5,ax6),(ax7,ax8,ax9)) =plt.subplots(3,3,figsize =(8,6),dpi = 150)
 lw = 2
 c1 = 'green'
@@ -86,12 +91,11 @@ ax8.set_ylabel('pfus')
 ax8.text(0.5,0.8,'{:.1f} MW'.format(pfuse_int),color = c1,transform = ax8.transAxes)
 ax8.text(0.5,0.6,'{:.1f} MW'.format(pfusi_int),color = c2,transform = ax8.transAxes)
 
-'''
-ax9.plot(rho_main,pe_rf1,color = c1,linewidth = lw)
-ax9.plot(rho_ips,pe_rf,color = c2,linewidth = lw,linestyle = 'dashed')
-ax9.plot(rho_main,pi_rf,color = c3,linewidth = lw)
-ax9.plot(rho_ips,pi_rf,color = c4,linewidth = lw,linestyle = 'dashed')
-ax9.set_ylabel('q_aux [MW/m$^3$]')
-'''
+ax9.plot(rho,fluxe,'.',color =c1,linewidth = lw)
+ax9.plot(rho,fluxe_exp,color = c1,linewidth = lw,linestyle = 'dashed')
+ax9.plot(rho,fluxi,'.',color = c2,linewidth = lw)
+ax9.plot(rho,fluxi_exp,color = c2,linewidth = lw,linestyle = 'dashed')
+ax9.set_ylabel('flux [W/m$^3$]')
+
 fig.tight_layout()
 plt.show()
