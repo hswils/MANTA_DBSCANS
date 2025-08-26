@@ -1,7 +1,7 @@
 #!/bin/bash -l
 #SBATCH -q regular
-#SBATCH -N 1
-#SBATCH -t 06:00:00
+#SBATCH -N 9
+#SBATCH -t 00:05:00
 #SBATCH -J ips_fastran
 #SBATCH -e ips.err
 #SBATCH -o ips.out
@@ -12,7 +12,8 @@ source activate /global/common/software/atom/perlmutter/cesol/conda/dev
 
 export SHOT_NUMBER=000001
 export TIME_ID=00001
+export FASTRAN_BIN_NAME=xfastran_ver1.06
 
-ips_dakota_dynamic.py --dakotaconfig=dakota.in --simulation=fastran_scenario.config --platform=perlmutter_cpu.conf --log=ips_sweep.log
+ips_dakota_dynamic.py --dakotaconfig=dakota.in --simulation=fastran_scenario.config --platform=$MACHINE_CONFIG --log=ips_sweep.log
 
 conda deactivate
