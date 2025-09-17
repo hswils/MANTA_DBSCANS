@@ -21,7 +21,8 @@ prfe_int = rootgrp['prfe'][-1]
 prfi = rootgrp['pi_rf'][-1,:]
 prfi_int = rootgrp['prfi'][-1]
 
-betan = rootgrp['betan_loc'][-1,:]
+#betan = rootgrp['betan_loc'][-1,:]
+
 betan_num = rootgrp['betan'][-1]
 
 ipol = rootgrp['ipol'][-1,:]
@@ -85,17 +86,17 @@ ax7.text(0.5,0.8,'i_rf = {:.1f}'.format(irf),color = c4,transform = ax7.transAxe
 ax7.text(0.5,0.6,'i_bs = {:.1f}'.format(ibs),color = c5,transform = ax7.transAxes)
 ax7.set_ylabel('current density')
 
-ax8.plot(rho,pfuse,color = c1,linewidth = lw)
-ax8.plot(rho,pfusi,color = c2,linewidth = lw,linestyle = 'dashed')
+ax8.plot(rho,5*pfuse,color = c1,linewidth = lw)
+ax8.plot(rho,5*pfusi,color = c2,linewidth = lw,linestyle = 'dashed')
 ax8.set_ylabel('pfus')
-ax8.text(0.5,0.8,'{:.1f} MW'.format(pfuse_int),color = c1,transform = ax8.transAxes)
-ax8.text(0.5,0.6,'{:.1f} MW'.format(pfusi_int),color = c2,transform = ax8.transAxes)
+ax8.text(0.5,0.8,'{:.1f} MW'.format(5*pfuse_int),color = c1,transform = ax8.transAxes)
+ax8.text(0.5,0.6,'{:.1f} MW'.format(5*pfusi_int),color = c2,transform = ax8.transAxes)
 
 ax9.plot(rho,fluxe,'.',color =c1,linewidth = lw)
 ax9.plot(rho,fluxe_exp,color = c1,linewidth = lw,linestyle = 'dashed')
 ax9.plot(rho,fluxi,'.',color = c2,linewidth = lw)
 ax9.plot(rho,fluxi_exp,color = c2,linewidth = lw,linestyle = 'dashed')
-ax9.set_ylabel('flux [W/m$^3$]')
+ax9.set_ylabel('e flux [W/m$^3$]')
 
 fig.tight_layout()
 plt.show()
