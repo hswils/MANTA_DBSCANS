@@ -3,7 +3,7 @@ from netCDF4 import Dataset
 from sys import argv
 import matplotlib.pyplot as plt
 
-ffile = argv[1]
+ffile = '/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/basecase/SCAN/work/fastran_tr_fastran_7/fastran.nc'
 rootgrp = Dataset(ffile)
 
 nebar = rootgrp['nebar'][-1]
@@ -51,7 +51,7 @@ ne_lin_avg = nebar
 #p_vol_avg = p_vol_int/vol
 Te_vol_avg = teavg
 
-f_Gr = ne_lin_avg/n_Gr #FIXME: should be n_e_lineavg/n_Gr
+f_Gr = ne_lin_avg/n_Gr
 
 #Calculate regression variables
 nu_eff = 0.2*ne_lin_avg*Rmaj/(Te_vol_avg**2)

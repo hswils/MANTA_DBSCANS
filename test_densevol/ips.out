@@ -4,14 +4,15 @@ Created <class 'fastran.driver.fastran_driver.fastran_driver'>
 Created <class 'fastran.equilibrium.efit.efit'>
 Created <class 'fastran.solver.fastran.fastran'>
 Created <class 'fastran.heating.hcd_model.hcd_model'>
+Created <class 'fastran.heating.pellet_model.pellet_model'>
 Created <class 'fastran.equilibrium.efit.efit'>
 Created <class 'fastran.solver.fastran.fastran'>
-IPS SLURM_NODES =  [('nid005728', 256)]
-2025-09-07 21:09:27,087 FRAMEWORK       WARNING  RM: listOfNodes = [('nid005728', 128)]
-2025-09-07 21:09:27,088 FRAMEWORK       WARNING  RM: max_ppn = 128 
-2025-09-07 21:09:27,089 FRAMEWORK       WARNING  Using user set procs per node: 128
-2025-09-07 21:09:27,089 FRAMEWORK       WARNING  RM: 1 nodes and 128 processors per node
-2025-09-07 21:09:27,160 FWK_COMP_PortalBridge_9 WARNING  Missing USER_W3_DIR configuration - disabling web-visible logging
+IPS SLURM_NODES =  [('nid005764', 256)]
+2025-09-22 13:52:15,964 FRAMEWORK       WARNING  RM: listOfNodes = [('nid005764', 128)]
+2025-09-22 13:52:15,965 FRAMEWORK       WARNING  RM: max_ppn = 128 
+2025-09-22 13:52:15,965 FRAMEWORK       WARNING  Using user set procs per node: 128
+2025-09-22 13:52:15,965 FRAMEWORK       WARNING  RM: 1 nodes and 128 processors per node
+2025-09-22 13:52:16,039 FWK_COMP_PortalBridge_10 WARNING  Missing USER_W3_DIR configuration - disabling web-visible logging
 fastran_init.init() started
 state_files: s000001.00001 g000001.00001 i000001.00001
 create null s000001.00001
@@ -66,8 +67,8 @@ Icurich=0.000e+00MA
 fastran_init.finalize() called
 ********************************************************************************
 FASTRAN DIRVER INIT
-PORTS (all) = ['INIT', 'DRIVER', 'EQ0', 'TR0', 'IC', 'EQ', 'TR']
-PORTS = ['INIT', 'DRIVER', 'EQ0', 'TR0', 'IC', 'EQ', 'TR']
+PORTS (all) = ['INIT', 'DRIVER', 'EQ0', 'TR0', 'IC', 'PELLET', 'EQ', 'TR']
+PORTS = ['INIT', 'DRIVER', 'EQ0', 'TR0', 'IC', 'PELLET', 'EQ', 'TR']
 SIMULATION_MODE = NORMAL
 *** t0 = 0
 EQ0 init ********
@@ -78,14 +79,16 @@ INPUT: B0_SCALE found 2.0 , mapped value =  2.0
 efit time = 1
 init_run =  1
 force free
+2025-09-22 13:52:16,582 FWK_COMP_PortalBridge_10 INFO     Run Portal URL = http://lb.ipsportal.production.svc.spin.nersc.org/78525
 scaled  1.7 2.0
-2025-09-07 21:09:27,704 FWK_COMP_PortalBridge_9 INFO     Run Portal URL = http://lb.ipsportal.production.svc.spin.nersc.org/78503
 ps_update disabled
 Icurt=2.862e+00MA
 TR0 init ********
 fastran.init() entered
 IC init ********
 hcd_model.init() called
+PELLET init ********
+pellet_model.init() called
 EQ init ********
 >>> efit.init() started
 INPUT: SCALE found 1 , mapped value =  enabled
@@ -107,7 +110,7 @@ INPUT: RELAX_PROFILE not found, use default value: 0
 INPUT: RELAX_METRIC not found, use default value: 0.5
 INPUT: BETAN_TARGET not found, use default value: -1.0
 model_pressure = kinetic
-betan = 1.212999028948282
+betan = 1.3722437573961157
 INPUT: TOPOLOGY found DN , mapped value =  DN
 INPUT: ERROR not found, use default value: 1.0e-4
 INPUT: MAX_EFIT_ERROR not found, use default value: 0.1
@@ -122,53 +125,53 @@ weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
 run efit
 efit, subprocess
-elapsed time =  0.375  1.228
-error_efit = 8.05e-05
+elapsed time =  0.363  1.253
+error_efit = 9.633e-05
 *** generate kfile 1
 apply underrelaxation
 r0 = 4.55
 b0 = 11.0
 ip = 9999999.995
 inmtric under-relax: 0.5
-ip, ip cal, ip/(ip cal) = 10.000 2.819 3.548
+ip, ip cal, ip/(ip cal) = 10.000 2.832 3.531
 weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
-diff_p = 0.1244110589282333
-diff_f = 0.2446367480696854
+diff_p = 0.12301515715923675
+diff_f = 0.37177994320018
 run efit
 efit, subprocess
-elapsed time =  0.467  1.214
-error_efit = 7.661e-05
+elapsed time =  0.374  1.196
+error_efit = 8.691e-05
 *** generate kfile 2
 apply underrelaxation
 r0 = 4.55
 b0 = 11.0
 ip = 9999999.995
 inmtric under-relax: 0.5
-ip, ip cal, ip/(ip cal) = 10.000 2.785 3.591
+ip, ip cal, ip/(ip cal) = 10.000 2.803 3.567
 weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
-diff_p = 0.11247370626355441
-diff_f = 0.17074587595562946
+diff_p = 0.11130354405068679
+diff_f = 0.25173188124669843
 run efit
 efit, subprocess
-elapsed time =  0.383  1.195
-error_efit = 9.47e-05
+elapsed time =  0.365  1.180
+error_efit = 9.04e-05
 *** generate kfile 3
 apply underrelaxation
 r0 = 4.55
 b0 = 11.0
 ip = 9999999.995
 inmtric under-relax: 0.5
-ip, ip cal, ip/(ip cal) = 10.000 2.758 3.626
+ip, ip cal, ip/(ip cal) = 10.000 2.778 3.599
 weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
-diff_p = 0.07667378988878819
-diff_f = 0.09999204762616415
+diff_p = 0.0760240736332277
+diff_f = 0.14117621898112806
 run efit
 efit, subprocess
-elapsed time =  0.407  1.201
-error_efit = 7.665e-05
+elapsed time =  0.363  1.150
+error_efit = 8.93e-05
 *** generate kfile 4
 apply underrelaxation
 r0 = 4.55
@@ -239,58 +242,73 @@ ip = 9999999.995
   %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
   %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
 inmtric under-relax: 0.5
-ip, ip cal, ip/(ip cal) = 10.000 2.739 3.652
+ip, ip cal, ip/(ip cal) = 10.000 2.760 3.624
 weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
-diff_p = 0.04554558102846095
-diff_f = 0.05518881088310961
+diff_p = 0.045346933060826884
+diff_f = 0.07643472088234896
 run efit
 efit, subprocess
-elapsed time =  0.421  1.178
-error_efit = 7.99e-05
+elapsed time =  0.362  1.180
+error_efit = 9.52e-05
 *** generate kfile 5
 apply underrelaxation
 r0 = 4.55
 b0 = 11.0
 ip = 9999999.995
 inmtric under-relax: 0.5
-ip, ip cal, ip/(ip cal) = 10.000 2.725 3.669
+ip, ip cal, ip/(ip cal) = 10.000 2.746 3.642
 weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
-diff_p = 0.024767767771089022
-diff_f = 0.029494292927466605
+diff_p = 0.024815869582794896
+diff_f = 0.040615196805381955
 run efit
 efit, subprocess
-elapsed time =  0.404  1.169
-error_efit = 8.581e-05
+elapsed time =  0.362  1.232
+error_efit = 7.235e-05
 *** generate kfile 6
 apply underrelaxation
 r0 = 4.55
 b0 = 11.0
 ip = 9999999.995
 inmtric under-relax: 0.5
-ip, ip cal, ip/(ip cal) = 10.000 2.717 3.681
+ip, ip cal, ip/(ip cal) = 10.000 2.737 3.654
 weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
-diff_p = 0.012604521250695135
-diff_f = 0.015383430975153278
+diff_p = 0.01274156761173215
+diff_f = 0.021225481192232942
 run efit
 efit, subprocess
-elapsed time =  0.409  1.144
-error_efit = 9.991e-05
+elapsed time =  0.370  1.150
+error_efit = 9.968e-05
 *** generate kfile 7
 apply underrelaxation
 r0 = 4.55
 b0 = 11.0
 ip = 9999999.995
 inmtric under-relax: 0.5
-ip, ip cal, ip/(ip cal) = 10.000 2.712 3.688
+ip, ip cal, ip/(ip cal) = 10.000 2.731 3.661
 weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
-diff_p = 0.0061085528478274954
-diff_f = 0.007870686891889292
+diff_p = 0.006252828668945407
+diff_f = 0.01094516138172498
+run efit
+efit, subprocess
+elapsed time =  0.363  1.139
+error_efit = 9.819e-05
+*** generate kfile 8
+apply underrelaxation
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+inmtric under-relax: 0.5
+ip, ip cal, ip/(ip cal) = 10.000 2.728 3.666
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+diff_p = 0.0029709986300661606
+diff_f = 0.0056095264734124595
 converged
-Icurt=2.707e+00MA
+Icurt=2.725e+00MA
 EQ0 step finished
 TR0 step
 fastran.step() entered
@@ -345,12 +363,12 @@ ion T
 imp W
 nspec_th = 3
 Icurt=1.000e+01MA
-Icurr_bootstrap=1.865e+00MA
+Icurr_bootstrap=2.011e+00MA
 Icurr_ohmic=0.000e+00MA
 rho_fus pfuse 100 100
-integrated :  35982645.604456715
+integrated :  61258689.14133846
 rho_fus pfusi 100 100
-integrated :  9340284.264099885
+integrated :  20129224.312465876
 model_beam = 0
 density_model = 1: impurity = f*ne
 TR0 step finished
@@ -369,11 +387,21 @@ Pi = [8.0]
 xmid = [0.0]
 xwid = [0.3]
 rho_icrf picrf_totals 6 100
-integrated :  30000482.434857525
+integrated :  29999540.07598417
 rho_icrf picrf_totals 6 100
-integrated :  8000128.649295344
+integrated :  7999877.353595777
 Icurich=0.000e+00MA
 IC step finished
+PELLET step
+pellet_model.init() started
+start dakota update
+npellet = 0
+sn_peak = [0.0]
+xmid = [0.0]
+xwid = [0.1]
+rho sn_trans 4 100
+integrated :  0.0
+PELLET step finished
 EQ step
 >>> efit.step() started
 INPUT: PRESSURE found kinetic , mapped value =  kinetic
@@ -381,7 +409,7 @@ INPUT: RELAX_PROFILE not found, use default value: 0
 INPUT: RELAX_METRIC not found, use default value: 0.5
 INPUT: BETAN_TARGET not found, use default value: -1.0
 model_pressure = kinetic
-betan = 1.1981105143625608
+betan = 1.3579807415277643
 INPUT: TOPOLOGY found DN , mapped value =  DN
 INPUT: ERROR not found, use default value: 1.0e-4
 INPUT: MAX_EFIT_ERROR not found, use default value: 0.1
@@ -396,21 +424,21 @@ weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
 run efit
 efit, subprocess
-elapsed time =  0.358  1.173
-error_efit = 9.194e-05
+elapsed time =  0.335  1.159
+error_efit = 9.477e-05
 *** generate kfile 1
 apply underrelaxation
 r0 = 4.55
 b0 = 11.0
 ip = 9999999.995
 inmtric under-relax: 0.5
-ip, ip cal, ip/(ip cal) = 10.000 9.999 1.000
+ip, ip cal, ip/(ip cal) = 10.000 10.000 1.000
 weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
-diff_p = 0.0002572597506468759
-diff_f = 8.196024726437424e-05
+diff_p = 0.00010819990822547891
+diff_f = 3.9713801065488314e-05
 converged
-Icurt=9.995e+00MA
+Icurt=9.998e+00MA
 EQ step finished
 TR step
 fastran.step() entered
@@ -426,18 +454,18 @@ dump_vol_profile : rho_nbi pbe 0.0
 dump_vol_profile : rho_nbi pbi 0.0
 dump_vol_profile : rho_nbi pbth 0.0
 dump_vol_profile : rho_nbi pbth 0.0
-dump_vol_profile : rho_fus pfuse 35982645.604456715
-dump_vol_profile : rho_fus pfusi 9340284.264099885
+dump_vol_profile : rho_fus pfuse 61258689.14133846
+dump_vol_profile : rho_fus pfusi 20129224.312465876
 dump_vol_profile : rho_fus pfusth 0.0
 dump_vol_profile : rho_ecrf peech 0.0
-dump_vol_profile : rho_icrf picrf_totals 30000482.434857525
+dump_vol_profile : rho_icrf picrf_totals 29999540.07598417
 dump_vol_profile : rho_lhrf pelh 0.0
 S_name =  ['e                               ' 'D                               '
  'T                               ' 'W                               ']
 0 e                               
 1 D                               
 processing 1 D                               
-dump_vol_profile : rho_icrf picrf_totals 8000128.649295344
+dump_vol_profile : rho_icrf picrf_totals 7999877.353595777
 2 T                               
 processing 2 T                               
 dump_vol_profile : rho_icrf picrf_totals 0.0
@@ -465,12 +493,12 @@ ion T
 imp W
 nspec_th = 3
 Icurt=1.000e+01MA
-Icurr_bootstrap=1.166e+00MA
+Icurr_bootstrap=9.406e-01MA
 Icurr_ohmic=0.000e+00MA
 rho_fus pfuse 100 100
-integrated :  11383965.011192892
+integrated :  12709690.04578237
 rho_fus pfusi 100 100
-integrated :  2729112.2073362204
+integrated :  3964764.564964702
 model_beam = 0
 density_model = 1: impurity = f*ne
 TR step finished
@@ -488,11 +516,21 @@ Pi = [8.0]
 xmid = [0.0]
 xwid = [0.3]
 rho_icrf picrf_totals 6 100
-integrated :  29999600.1826444
+integrated :  29999740.147255458
 rho_icrf picrf_totals 6 100
-integrated :  7999893.382038516
+integrated :  7999930.705934791
 Icurich=0.000e+00MA
 IC step finished
+PELLET step
+pellet_model.init() started
+start dakota update
+npellet = 0
+sn_peak = [0.0]
+xmid = [0.0]
+xwid = [0.1]
+rho sn_trans 4 100
+integrated :  0.0
+PELLET step finished
 EQ step
 >>> efit.step() started
 INPUT: PRESSURE found kinetic , mapped value =  kinetic
@@ -500,7 +538,7 @@ INPUT: RELAX_PROFILE not found, use default value: 0
 INPUT: RELAX_METRIC not found, use default value: 0.5
 INPUT: BETAN_TARGET not found, use default value: -1.0
 model_pressure = kinetic
-betan = 0.781985802695539
+betan = 0.8781508149814168
 INPUT: TOPOLOGY found DN , mapped value =  DN
 INPUT: ERROR not found, use default value: 1.0e-4
 INPUT: MAX_EFIT_ERROR not found, use default value: 0.1
@@ -515,19 +553,19 @@ weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
 run efit
 efit, subprocess
-elapsed time =  0.344  1.173
-error_efit = 7.428e-05
+elapsed time =  0.332  1.170
+error_efit = 7.497e-05
 *** generate kfile 1
 apply underrelaxation
 r0 = 4.55
 b0 = 11.0
 ip = 9999999.995
 inmtric under-relax: 0.5
-ip, ip cal, ip/(ip cal) = 10.000 9.914 1.009
+ip, ip cal, ip/(ip cal) = 10.000 9.901 1.010
 weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
-diff_p = 0.0014845888477390335
-diff_f = 0.001776251581234775
+diff_p = 0.0016292000949372039
+diff_f = 0.0022365286043798875
 converged
   ps_init_tag: Plasma State v2.055 f90 module initialization.
   %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
@@ -593,7 +631,7 @@ converged
   %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
   %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
   %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
-Icurt=9.827e+00MA
+Icurt=9.801e+00MA
 EQ step finished
 TR step
 fastran.step() entered
@@ -609,18 +647,18 @@ dump_vol_profile : rho_nbi pbe 0.0
 dump_vol_profile : rho_nbi pbi 0.0
 dump_vol_profile : rho_nbi pbth 0.0
 dump_vol_profile : rho_nbi pbth 0.0
-dump_vol_profile : rho_fus pfuse 11383965.011192892
-dump_vol_profile : rho_fus pfusi 2729112.2073362204
+dump_vol_profile : rho_fus pfuse 12709690.04578237
+dump_vol_profile : rho_fus pfusi 3964764.564964702
 dump_vol_profile : rho_fus pfusth 0.0
 dump_vol_profile : rho_ecrf peech 0.0
-dump_vol_profile : rho_icrf picrf_totals 29999600.1826444
+dump_vol_profile : rho_icrf picrf_totals 29999740.147255458
 dump_vol_profile : rho_lhrf pelh 0.0
 S_name =  ['e                               ' 'D                               '
  'T                               ' 'W                               ']
 0 e                               
 1 D                               
 processing 1 D                               
-dump_vol_profile : rho_icrf picrf_totals 7999893.382038516
+dump_vol_profile : rho_icrf picrf_totals 7999930.705934791
 2 T                               
 processing 2 T                               
 dump_vol_profile : rho_icrf picrf_totals 0.0
@@ -648,12 +686,12 @@ ion T
 imp W
 nspec_th = 3
 Icurt=1.000e+01MA
-Icurr_bootstrap=1.166e+00MA
+Icurr_bootstrap=9.333e-01MA
 Icurr_ohmic=0.000e+00MA
 rho_fus pfuse 100 100
-integrated :  11326538.684709169
+integrated :  12287399.24420159
 rho_fus pfusi 100 100
-integrated :  2706614.9129388207
+integrated :  3787804.364031737
 model_beam = 0
 density_model = 1: impurity = f*ne
 TR step finished
@@ -671,11 +709,21 @@ Pi = [8.0]
 xmid = [0.0]
 xwid = [0.3]
 rho_icrf picrf_totals 6 100
-integrated :  30000031.786924317
+integrated :  29999887.46130545
 rho_icrf picrf_totals 6 100
-integrated :  8000008.476513152
+integrated :  7999969.9896814525
 Icurich=0.000e+00MA
 IC step finished
+PELLET step
+pellet_model.init() started
+start dakota update
+npellet = 0
+sn_peak = [0.0]
+xmid = [0.0]
+xwid = [0.1]
+rho sn_trans 4 100
+integrated :  0.0
+PELLET step finished
 EQ step
 >>> efit.step() started
 INPUT: PRESSURE found kinetic , mapped value =  kinetic
@@ -683,7 +731,7 @@ INPUT: RELAX_PROFILE not found, use default value: 0
 INPUT: RELAX_METRIC not found, use default value: 0.5
 INPUT: BETAN_TARGET not found, use default value: -1.0
 model_pressure = kinetic
-betan = 0.7961519750120274
+betan = 0.84309410902547
 INPUT: TOPOLOGY found DN , mapped value =  DN
 INPUT: ERROR not found, use default value: 1.0e-4
 INPUT: MAX_EFIT_ERROR not found, use default value: 0.1
@@ -698,21 +746,21 @@ weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
 run efit
 efit, subprocess
-elapsed time =  0.332  1.124
-error_efit = 9.85e-05
+elapsed time =  0.331  1.157
+error_efit = 7.59e-05
 *** generate kfile 1
 apply underrelaxation
 r0 = 4.55
 b0 = 11.0
 ip = 9999999.995
 inmtric under-relax: 0.5
-ip, ip cal, ip/(ip cal) = 10.000 10.006 0.999
+ip, ip cal, ip/(ip cal) = 10.000 9.995 1.001
 weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
-diff_p = 0.0010321570000575645
-diff_f = 0.000622977531116255
+diff_p = 0.0009188618616495298
+diff_f = 0.0003366758007255552
 converged
-Icurt=1.001e+01MA
+Icurt=9.987e+00MA
 EQ step finished
 TR step
 fastran.step() entered
@@ -728,18 +776,18 @@ dump_vol_profile : rho_nbi pbe 0.0
 dump_vol_profile : rho_nbi pbi 0.0
 dump_vol_profile : rho_nbi pbth 0.0
 dump_vol_profile : rho_nbi pbth 0.0
-dump_vol_profile : rho_fus pfuse 11326538.684709169
-dump_vol_profile : rho_fus pfusi 2706614.9129388207
+dump_vol_profile : rho_fus pfuse 12287399.24420159
+dump_vol_profile : rho_fus pfusi 3787804.364031737
 dump_vol_profile : rho_fus pfusth 0.0
 dump_vol_profile : rho_ecrf peech 0.0
-dump_vol_profile : rho_icrf picrf_totals 30000031.786924317
+dump_vol_profile : rho_icrf picrf_totals 29999887.46130545
 dump_vol_profile : rho_lhrf pelh 0.0
 S_name =  ['e                               ' 'D                               '
  'T                               ' 'W                               ']
 0 e                               
 1 D                               
 processing 1 D                               
-dump_vol_profile : rho_icrf picrf_totals 8000008.476513152
+dump_vol_profile : rho_icrf picrf_totals 7999969.9896814525
 2 T                               
 processing 2 T                               
 dump_vol_profile : rho_icrf picrf_totals 0.0
@@ -767,12 +815,12 @@ ion T
 imp W
 nspec_th = 3
 Icurt=1.000e+01MA
-Icurr_bootstrap=1.164e+00MA
+Icurr_bootstrap=9.318e-01MA
 Icurr_ohmic=0.000e+00MA
 rho_fus pfuse 100 100
-integrated :  11244487.623966003
+integrated :  12186856.893326154
 rho_fus pfusi 100 100
-integrated :  2678084.1445236434
+integrated :  3731457.4338032273
 model_beam = 0
 density_model = 1: impurity = f*ne
 TR step finished
@@ -790,11 +838,21 @@ Pi = [8.0]
 xmid = [0.0]
 xwid = [0.3]
 rho_icrf picrf_totals 6 100
-integrated :  30000030.658699986
+integrated :  30000037.845984668
 rho_icrf picrf_totals 6 100
-integrated :  8000008.175653332
+integrated :  8000010.092262575
 Icurich=0.000e+00MA
 IC step finished
+PELLET step
+pellet_model.init() started
+start dakota update
+npellet = 0
+sn_peak = [0.0]
+xmid = [0.0]
+xwid = [0.1]
+rho sn_trans 4 100
+integrated :  0.0
+PELLET step finished
 EQ step
 >>> efit.step() started
 INPUT: PRESSURE found kinetic , mapped value =  kinetic
@@ -802,7 +860,7 @@ INPUT: RELAX_PROFILE not found, use default value: 0
 INPUT: RELAX_METRIC not found, use default value: 0.5
 INPUT: BETAN_TARGET not found, use default value: -1.0
 model_pressure = kinetic
-betan = 0.8095879388150871
+betan = 0.8206816750387097
 INPUT: TOPOLOGY found DN , mapped value =  DN
 INPUT: ERROR not found, use default value: 1.0e-4
 INPUT: MAX_EFIT_ERROR not found, use default value: 0.1
@@ -817,19 +875,19 @@ weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
 run efit
 efit, subprocess
-elapsed time =  0.335  1.165
-error_efit = 7.217e-05
+elapsed time =  0.332  1.144
+error_efit = 7.655e-05
 *** generate kfile 1
 apply underrelaxation
 r0 = 4.55
 b0 = 11.0
 ip = 9999999.995
 inmtric under-relax: 0.5
-ip, ip cal, ip/(ip cal) = 10.000 10.007 0.999
+ip, ip cal, ip/(ip cal) = 10.000 9.999 1.000
 weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
-diff_p = 0.00031695975487522744
-diff_f = 0.00010627083337436292
+diff_p = 9.607185642950931e-05
+diff_f = 0.00019722700916243306
 converged
   %ps_mhdeq_nclass: allocating 16 Pfirsch-Schlutter moments profiles.
   %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
@@ -895,7 +953,7 @@ converged
   %ps_update_fromxplasma: allocating nlim   =            5
   %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
   %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
-Icurt=1.001e+01MA
+Icurt=9.995e+00MA
 EQ step finished
 TR step
 fastran.step() entered
@@ -911,18 +969,18 @@ dump_vol_profile : rho_nbi pbe 0.0
 dump_vol_profile : rho_nbi pbi 0.0
 dump_vol_profile : rho_nbi pbth 0.0
 dump_vol_profile : rho_nbi pbth 0.0
-dump_vol_profile : rho_fus pfuse 11244487.623966003
-dump_vol_profile : rho_fus pfusi 2678084.1445236434
+dump_vol_profile : rho_fus pfuse 12186856.893326154
+dump_vol_profile : rho_fus pfusi 3731457.4338032273
 dump_vol_profile : rho_fus pfusth 0.0
 dump_vol_profile : rho_ecrf peech 0.0
-dump_vol_profile : rho_icrf picrf_totals 30000030.658699986
+dump_vol_profile : rho_icrf picrf_totals 30000037.845984668
 dump_vol_profile : rho_lhrf pelh 0.0
 S_name =  ['e                               ' 'D                               '
  'T                               ' 'W                               ']
 0 e                               
 1 D                               
 processing 1 D                               
-dump_vol_profile : rho_icrf picrf_totals 8000008.175653332
+dump_vol_profile : rho_icrf picrf_totals 8000010.092262575
 2 T                               
 processing 2 T                               
 dump_vol_profile : rho_icrf picrf_totals 0.0
@@ -950,12 +1008,12 @@ ion T
 imp W
 nspec_th = 3
 Icurt=1.000e+01MA
-Icurr_bootstrap=1.165e+00MA
+Icurr_bootstrap=9.308e-01MA
 Icurr_ohmic=0.000e+00MA
 rho_fus pfuse 100 100
-integrated :  11272273.904954882
+integrated :  12171420.320629986
 rho_fus pfusi 100 100
-integrated :  2684794.5093254303
+integrated :  3720869.707740679
 model_beam = 0
 density_model = 1: impurity = f*ne
 TR step finished
@@ -973,11 +1031,21 @@ Pi = [8.0]
 xmid = [0.0]
 xwid = [0.3]
 rho_icrf picrf_totals 6 100
-integrated :  29999979.038590636
+integrated :  30000225.2405156
 rho_icrf picrf_totals 6 100
-integrated :  7999994.410290839
+integrated :  8000060.064137488
 Icurich=0.000e+00MA
 IC step finished
+PELLET step
+pellet_model.init() started
+start dakota update
+npellet = 0
+sn_peak = [0.0]
+xmid = [0.0]
+xwid = [0.1]
+rho sn_trans 4 100
+integrated :  0.0
+PELLET step finished
 EQ step
 >>> efit.step() started
 INPUT: PRESSURE found kinetic , mapped value =  kinetic
@@ -985,7 +1053,7 @@ INPUT: RELAX_PROFILE not found, use default value: 0
 INPUT: RELAX_METRIC not found, use default value: 0.5
 INPUT: BETAN_TARGET not found, use default value: -1.0
 model_pressure = kinetic
-betan = 0.8200180347962195
+betan = 0.8039041659826687
 INPUT: TOPOLOGY found DN , mapped value =  DN
 INPUT: ERROR not found, use default value: 1.0e-4
 INPUT: MAX_EFIT_ERROR not found, use default value: 0.1
@@ -1000,21 +1068,21 @@ weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
 run efit
 efit, subprocess
-elapsed time =  0.335  1.172
-error_efit = 7.327e-05
+elapsed time =  0.327  1.158
+error_efit = 7.456e-05
 *** generate kfile 1
 apply underrelaxation
 r0 = 4.55
 b0 = 11.0
 ip = 9999999.995
 inmtric under-relax: 0.5
-ip, ip cal, ip/(ip cal) = 10.000 10.005 0.999
+ip, ip cal, ip/(ip cal) = 10.000 9.999 1.000
 weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
-diff_p = 9.465716832187673e-05
-diff_f = 7.38839126157917e-05
+diff_p = 0.00015394698720490836
+diff_f = 5.2893111884509514e-05
 converged
-Icurt=1.001e+01MA
+Icurt=9.997e+00MA
 EQ step finished
 TR step
 fastran.step() entered
@@ -1030,18 +1098,18 @@ dump_vol_profile : rho_nbi pbe 0.0
 dump_vol_profile : rho_nbi pbi 0.0
 dump_vol_profile : rho_nbi pbth 0.0
 dump_vol_profile : rho_nbi pbth 0.0
-dump_vol_profile : rho_fus pfuse 11272273.904954882
-dump_vol_profile : rho_fus pfusi 2684794.5093254303
+dump_vol_profile : rho_fus pfuse 12171420.320629986
+dump_vol_profile : rho_fus pfusi 3720869.707740679
 dump_vol_profile : rho_fus pfusth 0.0
 dump_vol_profile : rho_ecrf peech 0.0
-dump_vol_profile : rho_icrf picrf_totals 29999979.038590636
+dump_vol_profile : rho_icrf picrf_totals 30000225.2405156
 dump_vol_profile : rho_lhrf pelh 0.0
 S_name =  ['e                               ' 'D                               '
  'T                               ' 'W                               ']
 0 e                               
 1 D                               
 processing 1 D                               
-dump_vol_profile : rho_icrf picrf_totals 7999994.410290839
+dump_vol_profile : rho_icrf picrf_totals 8000060.064137488
 2 T                               
 processing 2 T                               
 dump_vol_profile : rho_icrf picrf_totals 0.0
@@ -1069,12 +1137,12 @@ ion T
 imp W
 nspec_th = 3
 Icurt=1.000e+01MA
-Icurr_bootstrap=1.165e+00MA
+Icurr_bootstrap=9.302e-01MA
 Icurr_ohmic=0.000e+00MA
 rho_fus pfuse 100 100
-integrated :  11266831.771411551
+integrated :  12152136.99069324
 rho_fus pfusi 100 100
-integrated :  2681134.584816587
+integrated :  3708383.1055956245
 model_beam = 0
 density_model = 1: impurity = f*ne
 TR step finished
@@ -1091,6 +1159,9 @@ TR0 finalize finished
 IC finalize
 hcd_model.finalize() called
 IC finalize finished
+PELLET finalize
+pellet_model.finalize() called
+PELLET finalize finished
 EQ finalize
 >>> efit.finalize() started
 EQ finalize finished
