@@ -1,0 +1,37 @@
+&intoray
+   ntoray = 1 
+   idamp  = 8       !damping model
+   nray   = 30      !number of rays (for raypatt=.`km` only)
+   nbfld  = 3       !equilibrium type (3 is EFIT)
+   freq   = 2.3e11
+   wrfo   = 1.0 
+   x      = 600.0
+   z      = 000.0
+   hlw    = 2.55 
+   ratw   = 1.0
+   rfpow  = 30.0e6
+   thet   = 140     !polar launch angle of central rays (degrees)
+   phai   = 205     !azimuthal launch angle of central rays (degrees)
+/
+
+&adjust
+   width = 0.0 
+   j_multi = 1.2
+/
+
+&edata
+   powinc    = 1.0e+13      !used to get the J/P profile along array for use in CQL3D
+   smax      = 1500.0       !maximum arc-length of ray
+   ds        = 1.0          !initial step size of arc length
+   pwrfmin   = 0.01
+   fdout     = 1            !ray output every fdout step
+   nharm     = 1            !harmonic number
+   mray      = 1 5 12 12 18 !number of rays in each Gaussian zone
+   gauszone  = 5            !number of annuli for Gaussian ray pattern model
+   netcdfdat = .true.       !if true, output netcdf file
+   cqldat    = .false.
+!  nlout(1)  = .false.
+!  nlout(2)  = .false.
+   igafit    = 1            !take equilibrium data from geqdsk
+! modelc = 5                !model for ECCD  
+/
