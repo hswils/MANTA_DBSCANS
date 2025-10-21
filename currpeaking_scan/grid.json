@@ -1,7 +1,7 @@
 {
   "scan": {
-    "j_alpha": {"type": "range", "ymin":0.2, "ymax":2, "ndata":4},
-    "j_beta"  : {"type": "range", "ymin":0.2, "ymax":2, "ndata":4}
+    "j_alpha": {"type": "range", "ymin":0.2, "ymax":2, "ndata":3},
+    "j_beta"  : {"type": "range", "ymin":0.5, "ymax":2, "ndata":2}
   },
 
   "const": {
@@ -22,7 +22,9 @@
     "te_axis" : 18.8,
     "te_ped"  : 5.0000000000,
     "ti_axis" : 19.0,
-    "h98"     : 0.8
+    "h98"     : 0.8,
+    "pe_ic"   : 10.0,
+    "pi_ic"   : 30.0
 
  },
 
@@ -58,7 +60,9 @@
     "j_alpha"     : ["fastran_init", "JPAR_ALPHA"    ],
     "j_beta"      : ["fastran_init", "JPAR_BETA"     ],
 
-    "h98"         : ["fastran_init", "H98_TARGET" ]
+    "h98"         : ["fastran_init", "H98_TARGET" ],
+    "pe_ic"       : ["hcd_model"   , "Pe"],
+    "pi_ic"       : ["hcd_model"   , "Pi"]
 
   }
 }
