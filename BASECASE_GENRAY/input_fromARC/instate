@@ -1,0 +1,89 @@
+&INSTATE
+
+  BETAN=-1
+  Q95=-1
+
+  DENSITY_MODEL = 0
+  MODEL_SHAPE = 2 
+  NBDRY = 15
+  USE_INPED = 0
+
+  IP = 7.8
+  B0 = 9.2
+  R0 = 3.3
+  A0 = 1.13
+  KAPPA = 1.84
+  DELTA = 0.6
+
+! PLASMA COMPOSITION
+
+  N_ION = 2               ! number of main plasma ions
+  Z_ION = 1 1             ! charge number of main plasma ions; array of N_ION; integer ; D + T
+  A_ION = 2 3             ! mass number of main plasma ions; array of N_ION; integer; D + T
+  F_ION = 0.5 0.5         ! fraction of each main ion; array of N_ION; D 50% + T 50%
+  N_IMP = 3               ! number of impurities
+  Z_IMP = 2 4 18          ! charge number of impurities; array of N_IMP; integer; He + Be + Ar
+  A_IMP = 4 9 40          ! mass number of impurities; array of N_IMP; integer; He + Be + Ar
+  F_IMP = 0.0 0.975 0.025 ! fraction of each impurity; array of N_IMP; float; 0% He, 97.5% Be, 2.5% Ar
+  N_MIN = 0               ! number of minority ions
+  Z_MIN = 1               ! charge number of minority ions; array of N_MIN; integer; neglected if N_MIN = 0
+  A_MIN = 1               ! mass number of minority ions; array of N_MIN; integer; neglected if N_MIN = 0
+  N_BEAM = 1              ! number of beam ions
+  Z_BEAM = 1              ! charge number of beam ions; array of N_BEAM; integer ; D
+  A_BEAM = 2              ! mass number of beam ions; array of N_BEAM; integer ; D
+  N_FUSION = 1            ! number of fusion particles
+  Z_FUSION = 2            ! charge number of fusion particles; array of N_FUSION; integer ; alpha particle
+  A_FUSION = 4            ! charge number of fusion particles; array of N_FUSION; integer ; alpha particle
+
+  NRHO = 101 
+
+  NE_AXIS = 17.8          ! density [10^19 m^-3]
+  NE_PED = 10.6           ! pedestal
+  NE_SEP = 10.2           ! separatrix
+  NE_ALPHA = 1.8         ! core general parabolic inner exponent
+  NE_BETA = 1.05          ! core general parabolic outer exponent
+  NE_XMID =  0.962         ! pedestal mid point ( normalized by a )
+  NE_XWID = 0.076          ! pedestal width (, normalized by a )
+  NE_FIT = 1              ! 1 = smooth
+
+  TE_AXIS = 28.0          ! electron temperature [keV]
+  TE_PED = 4.147          ! pedestal
+  TE_SEP = 0.075          ! separatrix
+  TE_ALPHA = 1.50         ! core general parabolic inner exponent
+  TE_BETA = 1.05          ! core general parabolic outer exponent
+  TE_XMID =  0.962          ! pedestal mid point
+  TE_XWID = 0.076          ! pedestal width
+  TE_FIT = 1              ! 1 = smotth
+
+  TI_AXIS = 28.0          ! ion temperature [keV]
+  TI_PED = 4.009          ! pedestal
+  TI_SEP = 0.075            ! separatrix
+  TI_ALPHA = 1.5         ! core general parabolic inner exponent
+  TI_BETA = 1.05          ! core general parabolic outer exponent
+  TI_XMID =  0.962          ! pedestal mid point
+  TI_XWID = 0.076         ! pedestal width
+  TI_FIT= 1               ! 1 = smotth
+
+  OMEGA_AXIS = 0.0e5      ! toroidal rotaiton [rad/s]
+  OMEGA_SEP = 0.0         ! separatrix
+  OMEGA_ALPHA = 2.0       ! core general parabolic inner exponent
+  OMEGA_BETA = 1.5        ! core general parabolic outer exponent
+
+  ZEFF_AXIS = 1.2         ! zeff, constant
+
+  NBEAM_AXIS = 0.0        ! beam ion density [10^19 m^-3]
+  NBEAM_SEP  = 0.0        ! separatrix
+  NBEAM_ALPHA= 1.5        ! core general parabolic inner exponent
+  NBEAM_BETA = 1.5        ! core general parabolic outer exponent
+  TBEAMI = 20.0           ! Maxwellian equivalent beam ion temperature [keV]
+
+  XMID = 0                ! pedestal mid point, if > 0, ne_xmid = te_xmid = ti_xmid = xmid
+  XWID = 0                ! pedestal width, if > 0, ne_xwid = te_xwid = ti_xwid = xwid
+  BETAN_PED = -1.0        ! if > 0, pedestal betan
+
+  JPAR_AXIS  = 1.0        ! parallel current density at axis, will be scaled to match Ip
+  JPAR_SEP   = 0.05       ! separatrix
+  JPAR_ALPHA = 2.0        ! core general parabolic inner exponent
+  JPAR_BETA  = 1.0        ! core general parabolic outer exponent
+/
+
