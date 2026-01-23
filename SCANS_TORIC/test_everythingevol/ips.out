@@ -1,0 +1,1691 @@
+Starting IPS 0.8.1
+Created <class 'fastran.driver.fastran_init.fastran_init'>
+Created <class 'fastran.driver.fastran_driver.fastran_driver'>
+Created <class 'fastran.equilibrium.efit.efit'>
+Created <class 'fastran.solver.fastran.fastran'>
+Created <class 'fastran.external.rf_ic_toric_abr_mcmd.toric'>
+Created <class 'fastran.heating.pellet_model.pellet_model'>
+Created <class 'fastran.equilibrium.efit.efit'>
+Created <class 'fastran.solver.fastran.fastran'>
+IPS SLURM_NODES =  [('nid005908', 256)]
+2025-11-06 14:34:27,874 FRAMEWORK       WARNING  RM: listOfNodes = [('nid005908', 128)]
+2025-11-06 14:34:27,875 FRAMEWORK       WARNING  RM: max_ppn = 128 
+2025-11-06 14:34:27,875 FRAMEWORK       WARNING  Using user set procs per node: 128
+2025-11-06 14:34:27,875 FRAMEWORK       WARNING  RM: 1 nodes and 128 processors per node
+2025-11-06 14:34:27,948 FWK_COMP_PortalBridge_10 WARNING  Missing USER_W3_DIR configuration - disabling web-visible logging
+fastran_init.init() started
+state_files: s000001.00001 g000001.00001 i000001.00001
+create null s000001.00001
+create null g000001.00001
+create null i000001.00001
+fastran_init.step() started
+tokamak_id = FPP
+shot_number = 000001
+INPUT_DIR = /pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_everythingevol/input
+model_beam = 0
+start dakota update
+update_namelist called
+instate_method: model
+Shape from instate data array
+ne from model profile, ped
+te from model profile, ped
+ti from model profile, ped
+density_beam from model profile, parab
+j_tot from model profile, parab
+omega from model profile, parab
+zeff from model profile, const
+tbeami from model profile, const
+density_alpha from model profile, zero
+walpha from model profile, zero
+wbeam from the model profile
+density_model = 1: impurity = f*ne
+init from instate: instate
+usng analytic volume
+end
+rho_rad prad 100 100
+integrated :  0.0
+rho pohme 100 100
+integrated :  0.0
+Icurt=2.888e+00MA
+rho_nbi pbe 100 100
+integrated :  0.0
+rho_nbi pbi 100 100
+integrated :  0.0
+rho_nbi sbedep 100 100
+integrated :  0.0
+rho_nbi tqbe 100 100
+integrated :  0.0
+Icurbeam=0.000e+00MA
+rho_ecrf peech 100 100
+integrated :  0.0
+rho_icrf picrf_totals 6 100
+integrated :  0.0
+rho_icrf picrf_totals 6 100
+integrated :  0.0
+Icurech=0.000e+00MA
+Icurich=0.000e+00MA
+fastran_init.finalize() called
+********************************************************************************
+FASTRAN DIRVER INIT
+PORTS (all) = ['INIT', 'DRIVER', 'EQ0', 'TR0', 'IC', 'PELLET', 'EQ', 'TR']
+PORTS = ['INIT', 'DRIVER', 'EQ0', 'TR0', 'IC', 'PELLET', 'EQ', 'TR']
+SIMULATION_MODE = NORMAL
+*** t0 = 0
+EQ0 init ********
+>>> efit.init() started
+INPUT: SCALE found 1 , mapped value =  enabled
+INPUT: R0_SCALE found 1.7 , mapped value =  1.7
+INPUT: B0_SCALE found 2.0 , mapped value =  2.0
+efit time = 1
+init_run =  1
+force free
+2025-11-06 14:34:28,493 FWK_COMP_PortalBridge_10 INFO     Run Portal URL = http://lb.ipsportal.production.svc.spin.nersc.org/79500
+scaled  1.7 2.0
+ps_update disabled
+Icurt=2.862e+00MA
+TR0 init ********
+fastran.init() entered
+IC init ********
+toric.init() called
+('touching ', 'torica.inp')
+('touching ', 'machine.inp')
+('touching ', 'log.toric')
+('touching ', 'toric.nc')
+('touching ', 'profstat.dat')
+('touching ', 'equigs.data')
+('touching ', 'equidt.data')
+('touching ', 'toric_cfg.nc')
+PELLET init ********
+pellet_model.init() called
+EQ init ********
+>>> efit.init() started
+INPUT: SCALE found 1 , mapped value =  enabled
+INPUT: R0_SCALE found 1.7 , mapped value =  1.7
+INPUT: B0_SCALE found 2.0 , mapped value =  2.0
+efit time = 1
+init_run =  0
+TR init ********
+fastran.init() entered
+nstep_pre: 1
+
+========================================================================
+= fastran driver: preprocess iteration number =  0
+
+EQ0 step
+>>> efit.step() started
+INPUT: PRESSURE found kinetic , mapped value =  kinetic
+INPUT: RELAX_PROFILE not found, use default value: 0
+INPUT: RELAX_METRIC not found, use default value: 0.5
+INPUT: BETAN_TARGET not found, use default value: -1.0
+model_pressure = kinetic
+betan = 1.3722437573961157
+INPUT: TOPOLOGY found DN , mapped value =  DN
+INPUT: ERROR not found, use default value: 1.0e-4
+INPUT: MAX_EFIT_ERROR not found, use default value: 0.1
+init_run_step = 0
+niter =  10
+*** generate kfile 0
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+ip, ip cal, ip/(ip cal) = 10.000 2.863 3.493
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+run efit
+efit, subprocess
+elapsed time =  0.352  1.257
+error_efit = 9.633e-05
+*** generate kfile 1
+apply underrelaxation
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+inmtric under-relax: 0.5
+ip, ip cal, ip/(ip cal) = 10.000 2.832 3.531
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+diff_p = 0.12301515715923675
+diff_f = 0.37177994320018
+run efit
+efit, subprocess
+elapsed time =  0.377  1.238
+error_efit = 8.691e-05
+*** generate kfile 2
+apply underrelaxation
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+inmtric under-relax: 0.5
+ip, ip cal, ip/(ip cal) = 10.000 2.803 3.567
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+diff_p = 0.11130354405068679
+diff_f = 0.25173188124669843
+run efit
+efit, subprocess
+elapsed time =  0.369  1.210
+error_efit = 9.04e-05
+*** generate kfile 3
+apply underrelaxation
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+inmtric under-relax: 0.5
+ip, ip cal, ip/(ip cal) = 10.000 2.778 3.599
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+diff_p = 0.0760240736332277
+diff_f = 0.14117621898112806
+run efit
+efit, subprocess
+elapsed time =  0.364  1.170
+error_efit = 8.93e-05
+*** generate kfile 4
+apply underrelaxation
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+  ps_init_tag: Plasma State v2.055 f90 module initialization.
+  %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
+  %ps_update_fromxplasma: allocating nlim   =            5
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_nclass: allocating 16 Pfirsch-Schlutter moments profiles.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
+  %ps_update_fromxplasma: allocating nlim   =            5
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_nclass: allocating 16 Pfirsch-Schlutter moments profiles.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
+  %ps_update_fromxplasma: allocating nlim   =            5
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_nclass: allocating 16 Pfirsch-Schlutter moments profiles.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
+  %ps_update_fromxplasma: allocating nlim   =            5
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_nclass: allocating 16 Pfirsch-Schlutter moments profiles.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
+  %ps_update_fromxplasma: allocating nlim   =            5
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_nclass: allocating 16 Pfirsch-Schlutter moments profiles.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
+  %ps_update_fromxplasma: allocating nlim   =            5
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_nclass: allocating 16 Pfirsch-Schlutter moments profiles.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
+  %ps_update_fromxplasma: allocating nlim   =            5
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_nclass: allocating 16 Pfirsch-Schlutter moments profiles.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+inmtric under-relax: 0.5
+ip, ip cal, ip/(ip cal) = 10.000 2.760 3.624
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+diff_p = 0.045346933060826884
+diff_f = 0.07643472088234896
+run efit
+efit, subprocess
+elapsed time =  0.363  1.312
+error_efit = 9.52e-05
+*** generate kfile 5
+apply underrelaxation
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+inmtric under-relax: 0.5
+ip, ip cal, ip/(ip cal) = 10.000 2.746 3.642
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+diff_p = 0.024815869582794896
+diff_f = 0.040615196805381955
+run efit
+efit, subprocess
+elapsed time =  0.364  1.273
+error_efit = 7.235e-05
+*** generate kfile 6
+apply underrelaxation
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+inmtric under-relax: 0.5
+ip, ip cal, ip/(ip cal) = 10.000 2.737 3.654
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+diff_p = 0.01274156761173215
+diff_f = 0.021225481192232942
+run efit
+efit, subprocess
+elapsed time =  0.374  1.160
+error_efit = 9.968e-05
+*** generate kfile 7
+apply underrelaxation
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+inmtric under-relax: 0.5
+ip, ip cal, ip/(ip cal) = 10.000 2.731 3.661
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+diff_p = 0.006252828668945407
+diff_f = 0.01094516138172498
+run efit
+efit, subprocess
+elapsed time =  0.364  1.157
+error_efit = 9.819e-05
+*** generate kfile 8
+apply underrelaxation
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+inmtric under-relax: 0.5
+ip, ip cal, ip/(ip cal) = 10.000 2.728 3.666
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+diff_p = 0.0029709986300661606
+diff_f = 0.0056095264734124595
+converged
+Icurt=2.725e+00MA
+EQ0 step finished
+TR0 step
+fastran.step() entered
+update_next = disabled
+update_instate =  True
+[1, 1, 74]
+['D', 'T', 'W']
+ion D
+ion T
+imp W
+model_beam = 0
+dump_vol_profile : rho_nbi pbe 0.0
+dump_vol_profile : rho_nbi pbi 0.0
+dump_vol_profile : rho_nbi pbth 0.0
+dump_vol_profile : rho_nbi pbth 0.0
+dump_vol_profile : rho_fus pfuse 0.0
+dump_vol_profile : rho_fus pfusi 0.0
+dump_vol_profile : rho_fus pfusth 0.0
+dump_vol_profile : rho_ecrf peech 0.0
+dump_vol_profile : rho_icrf picrf_totals 0.0
+dump_vol_profile : rho_lhrf pelh 0.0
+S_name =  ['e                               ' 'D                               '
+ 'T                               ' 'W                               ']
+0 e                               
+1 D                               
+processing 1 D                               
+dump_vol_profile : rho_icrf picrf_totals 0.0
+2 T                               
+processing 2 T                               
+dump_vol_profile : rho_icrf picrf_totals 0.0
+3 W                               
+processing 3 W                               
+dump_vol_profile : rho_icrf picrf_totals 0.0
+dump_vol_profile : rho_lhrf pilh 0.0
+dump_vol_profile : rho_nbi tqbe 0.0
+dump_vol_profile : rho_nbi tqbi 0.0
+dump_vol_profile : rho_nbi tqbjxb 0.0
+dump_vol_profile : rho_nbi tqbth 0.0
+dump_vol_profile : rho_nbi sbedep 0.0
+dump_vol_profile : rho_nbi sbehalo 0.0
+dump_vol_profile : rho sn_trans 0.0
+dump_vol_profile : rho_rad prad 0.0
+dump_vol_profile : rho pohme 0.0
+/global/common/software/atom/perlmutter/binaries/fastran/default/xfastran_ver1.00_ser
+ncpu =  1
+n1d  =  1
+nky  =  1
+[1, 1, 74]
+['D', 'T', 'W']
+ion D
+ion T
+imp W
+nspec_th = 3
+Icurt=1.000e+01MA
+Icurr_bootstrap=2.011e+00MA
+Icurr_ohmic=0.000e+00MA
+rho_fus pfuse 100 100
+integrated :  61258689.14133846
+rho_fus pfusi 100 100
+integrated :  20129224.312465876
+model_beam = 0
+density_model = 1: impurity = f*ne
+TR0 step finished
+number of iteration : 5
+
+========================================================================
+= fastran driver: iteration number =  0
+
+IC step
+toric.step() called
+cur_state_file =  s000001.00001
+('Total IC power = ', 40000000.0)
+power =  40000000.0
+ using s000001.00001 as default state.
+  ps_init_tag: Plasma State v2.055 f90 module initialization.
+ Prepare toric input reading machine.inp
+ ps%ns(1,0)   2.7623067349999999E+020
+ <n_e(m-3)-PS> =   1.8581988241274041E+020
+ <n_e(m-3)-Interpolated> =   1.8657857328397723E+020
+ Thermal ion name, A, Z, dens, temp = 
+ D           2           1   1.3761469698962049E+020   19.016966080000000     
+ Thermal ion name, A, Z, dens, temp = 
+ T           3           1   1.3761469698962049E+020   19.016966080000000     
+ Thermal ion name, A, Z, dens, temp = 
+ W         182          74   13520671733652476.        19.016966080000000     
+ Fast ion name, A, Z = D_beam           2           1
+ Fast ion name, A, Z = He4_fusn           4           2
+('prepare_eqdsk', '/global/common/software/atom/perlmutter/binaries/geqxpl/default/geqxpl', 'g000001.00001')
+  
+  G-EQdsk data accepted, maximum rel. GS error:    7.1307787797591660E-003
+  
+  Bphi is counter-clockwise viewed from above (nsnccwb = 1)
+  
+  Jphi is counter-clockwise viewed from above (nsnccwi = 1)
+  
+ equigs_write completion code (0=normal):           0
+('toric processors = ', '24')
+  -- get (restore) plasma state from file -- 
+ process_toric_output: cur_state_file = s000001.00001
+  ps_init_tag: Plasma State v2.055 f90 module initialization.
+ freq_ic, picrf  alloc? T T
+ RF alloc? T         600
+    number of icrf sources =            1
+    number of species =            5           3
+ process toric output: profile and spec sizes:
+ toric mesh, PS mesh         459         101
+ toric species, PS species counts           5           3
+ powers in percent
+ total:   100.00000000000000     
+ electron total   27.295629326586962        4.0039536072433117     
+ ion totals fundamental   1.3740457825900702E-004   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ ion totals harmonic   0.0000000000000000        68.700279661591466        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+    number of thermal species (ps%nspec_th) =            3
+    number of icrf sources (ps%nicrf_src) =            1
+ ps%freq_ic =    0.0000000000000000     
+ ps%icrf_src_name = IC00                            
+ ps%power_ic =    40000000.000000000     
+ ICRF Power   40000000.000000000     
+   --storing toric data in current plasma state
+ Total FW Driven Current (A)   357510.26883392490     
+ Total ICRF Power (W)   40000000.000000000     
+ FWCD Effciency (A/W)   8.9377567208481223E-003
+ Total FW Driven Current from each source-> Interpolated (A)   357510.26883392438     
+ Total FW Driven Current from all sources -> Interpolated (A)   357510.26883392438     
+  *ps_update_file_write: normal exit,            6  update elements written.
+ Stored Partial RF Plasma State
+ electron power, integral
+   12519513.402632199      Watts
+ FW ion power, integral
+   27480486.597367525      Watts
+error but neglected...
+IC step finished
+PELLET step
+pellet_model.init() started
+start dakota update
+npellet = 1
+sn_peak = [20.0]
+xmid = [0.7]
+xwid = [0.15]
+[3.73289382e-04 5.08386930e-04 6.89307366e-04 9.30467619e-04
+ 1.25043008e-03 1.67296694e-03 2.22835876e-03 2.95496720e-03
+ 3.90112639e-03 5.12739977e-03 6.70925256e-03 8.74019060e-03
+ 1.13354161e-02 1.46360484e-02 1.88139509e-02 2.40771999e-02
+ 3.06762136e-02 3.89105464e-02 4.91363292e-02 6.17743082e-02
+ 7.73184028e-02 9.63446626e-02 1.19520458e-01 1.47613691e-01
+ 1.81501756e-01 2.22179931e-01 2.70768803e-01 3.28520310e-01
+ 3.96821895e-01 4.77198238e-01 5.71310016e-01 6.80949095e-01
+ 8.08029577e-01 9.54574155e-01 1.12269526e+00 1.31457057e+00
+ 1.53241264e+00 1.77843235e+00 2.05479630e+00 2.36357834e+00
+ 2.70670566e+00 3.08590011e+00 3.50261577e+00 3.95797398e+00
+ 4.45269732e+00 4.98704418e+00 5.56074601e+00 6.17294922e+00
+ 6.82216396e+00 7.50622198e+00 8.22224581e+00 8.96663128e+00
+ 9.73504512e+00 1.05224393e+01 1.13230830e+01 1.21306132e+01
+ 1.29381035e+01 1.37381511e+01 1.45229807e+01 1.52845633e+01
+ 1.60147481e+01 1.67054042e+01 1.73485695e+01 1.79366012e+01
+ 1.84623269e+01 1.89191894e+01 1.93013824e+01 1.96039735e+01
+ 1.98230100e+01 1.99556049e+01 2.00000000e+01 1.99556049e+01
+ 1.98230100e+01 1.96039735e+01 1.93013824e+01 1.89191894e+01
+ 1.84623269e+01 1.79366012e+01 1.73485695e+01 1.67054042e+01
+ 1.60147481e+01 1.52845633e+01 1.45229807e+01 1.37381511e+01
+ 1.29381035e+01 1.21306132e+01 1.13230830e+01 1.05224393e+01
+ 9.73504512e+00 8.96663128e+00 8.22224581e+00 7.50622198e+00
+ 6.82216396e+00 6.17294922e+00 5.56074601e+00 4.98704418e+00
+ 4.45269732e+00 3.95797398e+00 3.50261577e+00 3.08590011e+00
+ 2.70670566e+00]
+[3.73289382e+15 5.08386930e+15 6.89307366e+15 9.30467619e+15
+ 1.25043008e+16 1.67296694e+16 2.22835876e+16 2.95496720e+16
+ 3.90112639e+16 5.12739977e+16 6.70925256e+16 8.74019060e+16
+ 1.13354161e+17 1.46360484e+17 1.88139509e+17 2.40771999e+17
+ 3.06762136e+17 3.89105464e+17 4.91363292e+17 6.17743082e+17
+ 7.73184028e+17 9.63446626e+17 1.19520458e+18 1.47613691e+18
+ 1.81501756e+18 2.22179931e+18 2.70768803e+18 3.28520310e+18
+ 3.96821895e+18 4.77198238e+18 5.71310016e+18 6.80949095e+18
+ 8.08029577e+18 9.54574155e+18 1.12269526e+19 1.31457057e+19
+ 1.53241264e+19 1.77843235e+19 2.05479630e+19 2.36357834e+19
+ 2.70670566e+19 3.08590011e+19 3.50261577e+19 3.95797398e+19
+ 4.45269732e+19 4.98704418e+19 5.56074601e+19 6.17294922e+19
+ 6.82216396e+19 7.50622198e+19 8.22224581e+19 8.96663128e+19
+ 9.73504512e+19 1.05224393e+20 1.13230830e+20 1.21306132e+20
+ 1.29381035e+20 1.37381511e+20 1.45229807e+20 1.52845633e+20
+ 1.60147481e+20 1.67054042e+20 1.73485695e+20 1.79366012e+20
+ 1.84623269e+20 1.89191894e+20 1.93013824e+20 1.96039735e+20
+ 1.98230100e+20 1.99556049e+20 2.00000000e+20 1.99556049e+20
+ 1.98230100e+20 1.96039735e+20 1.93013824e+20 1.89191894e+20
+ 1.84623269e+20 1.79366012e+20 1.73485695e+20 1.67054042e+20
+ 1.60147481e+20 1.52845633e+20 1.45229807e+20 1.37381511e+20
+ 1.29381035e+20 1.21306132e+20 1.13230830e+20 1.05224393e+20
+ 9.73504512e+19 8.96663128e+19 8.22224581e+19 7.50622198e+19
+ 6.82216396e+19 6.17294922e+19 5.56074601e+19 4.98704418e+19
+ 4.45269732e+19 3.95797398e+19 3.50261577e+19 3.08590011e+19
+ 2.70670566e+19]
+rho sn_trans 4 100
+integrated :  1.5109910501969805e+22
+PELLET step finished
+EQ step
+>>> efit.step() started
+INPUT: PRESSURE found kinetic , mapped value =  kinetic
+INPUT: RELAX_PROFILE not found, use default value: 0
+INPUT: RELAX_METRIC not found, use default value: 0.5
+INPUT: BETAN_TARGET not found, use default value: -1.0
+model_pressure = kinetic
+betan = 1.3579807415277643
+INPUT: TOPOLOGY found DN , mapped value =  DN
+INPUT: ERROR not found, use default value: 1.0e-4
+INPUT: MAX_EFIT_ERROR not found, use default value: 0.1
+init_run_step = 0
+niter =  10
+*** generate kfile 0
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+ip, ip cal, ip/(ip cal) = 10.000 10.002 1.000
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+run efit
+efit, subprocess
+elapsed time =  0.340  1.228
+error_efit = 9.477e-05
+*** generate kfile 1
+apply underrelaxation
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+inmtric under-relax: 0.5
+ip, ip cal, ip/(ip cal) = 10.000 10.000 1.000
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+diff_p = 0.00010819990822547891
+diff_f = 3.9713801065488314e-05
+converged
+Icurt=9.998e+00MA
+EQ step finished
+TR step
+fastran.step() entered
+update_next = disabled
+update_instate =  True
+[1, 1, 74]
+['D', 'T', 'W']
+ion D
+ion T
+imp W
+model_beam = 0
+dump_vol_profile : rho_nbi pbe 0.0
+dump_vol_profile : rho_nbi pbi 0.0
+dump_vol_profile : rho_nbi pbth 0.0
+dump_vol_profile : rho_nbi pbth 0.0
+dump_vol_profile : rho_fus pfuse 61258689.14133846
+dump_vol_profile : rho_fus pfusi 20129224.312465876
+dump_vol_profile : rho_fus pfusth 0.0
+dump_vol_profile : rho_ecrf peech 0.0
+dump_vol_profile : rho_icrf picrf_totals 12519513.4026322
+dump_vol_profile : rho_lhrf pelh 0.0
+S_name =  ['e                               ' 'D                               '
+ 'T                               ' 'W                               ']
+0 e                               
+1 D                               
+processing 1 D                               
+dump_vol_profile : rho_icrf picrf_totals 137.26067133427483
+2 T                               
+processing 2 T                               
+dump_vol_profile : rho_icrf picrf_totals 27480349.33669619
+3 W                               
+processing 3 W                               
+dump_vol_profile : rho_icrf picrf_totals 0.0
+dump_vol_profile : rho_lhrf pilh 0.0
+dump_vol_profile : rho_nbi tqbe 0.0
+dump_vol_profile : rho_nbi tqbi 0.0
+dump_vol_profile : rho_nbi tqbjxb 0.0
+dump_vol_profile : rho_nbi tqbth 0.0
+dump_vol_profile : rho_nbi sbedep 0.0
+dump_vol_profile : rho_nbi sbehalo 0.0
+dump_vol_profile : rho sn_trans 1.5109910501969805e+22
+dump_vol_profile : rho_rad prad 0.0
+dump_vol_profile : rho pohme 0.0
+/global/common/software/atom/perlmutter/binaries/fastran/default/xfastran_ver1.00_ser
+ncpu =  1
+n1d  =  1
+nky  =  1
+[1, 1, 74]
+['D', 'T', 'W']
+ion D
+ion T
+imp W
+nspec_th = 3
+Icurt=1.000e+01MA
+Icurr_bootstrap=1.673e+00MA
+Icurr_ohmic=0.000e+00MA
+rho_fus pfuse 100 100
+integrated :  45144500.87649617
+rho_fus pfusi 100 100
+integrated :  15261208.738351773
+model_beam = 0
+density_model = 1: impurity = f*ne
+TR step finished
+
+========================================================================
+= fastran driver: iteration number =  1
+
+IC step
+toric.step() called
+cur_state_file =  s000001.00001
+('Total IC power = ', 40000000.0)
+power =  40000000.0
+ using s000001.00001 as default state.
+  ps_init_tag: Plasma State v2.055 f90 module initialization.
+ Prepare toric input reading machine.inp
+ ps%ns(1,0)   2.4211762606396536E+020
+ <n_e(m-3)-PS> =   1.8216601140131332E+020
+ <n_e(m-3)-Interpolated> =   1.8299076422721418E+020
+ Thermal ion name, A, Z, dens, temp = 
+ D           2           1   1.2026396777552696E+020   19.296809583914747     
+ Thermal ion name, A, Z, dens, temp = 
+ T           3           1   1.2026396777552696E+020   19.296809583914747     
+ Thermal ion name, A, Z, dens, temp = 
+ W         182          74   21472171627603312.        19.296809583914747     
+ Fast ion name, A, Z = D_beam           2           1
+ Fast ion name, A, Z = He4_fusn           4           2
+('prepare_eqdsk', '/global/common/software/atom/perlmutter/binaries/geqxpl/default/geqxpl', 'g000001.00001')
+  
+  G-EQdsk data accepted, maximum rel. GS error:    7.5184134061417798E-003
+  
+  Bphi is counter-clockwise viewed from above (nsnccwb = 1)
+  
+  Jphi is counter-clockwise viewed from above (nsnccwi = 1)
+  
+ equigs_write completion code (0=normal):           0
+('toric processors = ', '24')
+  -- get (restore) plasma state from file -- 
+ process_toric_output: cur_state_file = s000001.00001
+  ps_init_tag: Plasma State v2.055 f90 module initialization.
+ freq_ic, picrf  alloc? T T
+ RF alloc? T         600
+    number of icrf sources =            1
+    number of species =            5           3
+ process toric output: profile and spec sizes:
+ toric mesh, PS mesh         459         101
+ toric species, PS species counts           5           3
+ powers in percent
+ total:   100.00000000000000     
+ electron total   29.255763989613374        3.6252232171610137     
+ ion totals fundamental   9.8654409935079515E-005   0.0000000000000000        0.0000000000000000        1.1911372973445640E-020   0.0000000000000000     
+ ion totals harmonic   0.0000000000000000        67.118914138815668        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+    number of thermal species (ps%nspec_th) =            3
+    number of icrf sources (ps%nicrf_src) =            1
+ ps%freq_ic =    0.0000000000000000     
+ ps%icrf_src_name = IC00                            
+ ps%power_ic =    40000000.000000000     
+ ICRF Power   40000000.000000000     
+   --storing toric data in current plasma state
+ Total FW Driven Current (A)   388422.89054842963     
+ Total ICRF Power (W)   40000000.000000000     
+ FWCD Effciency (A/W)   9.7105722637107414E-003
+ Total FW Driven Current from each source-> Interpolated (A)   388422.89054843015     
+ Total FW Driven Current from all sources -> Interpolated (A)   388422.89054843015     
+  *ps_update_file_write: normal exit,            5  update elements written.
+ Stored Partial RF Plasma State
+ electron power, integral
+   13153037.327540571      Watts
+ FW ion power, integral
+   26846962.672459297      Watts
+('merged TORIC plasma state data ', '/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_everythingevol/SCAN/work/rf_ic_toric_5/RF_IC_s000001.00001')
+IC step finished
+PELLET step
+pellet_model.init() started
+start dakota update
+npellet = 1
+sn_peak = [20.0]
+xmid = [0.7]
+xwid = [0.15]
+[3.73289382e-04 5.08386930e-04 6.89307366e-04 9.30467619e-04
+ 1.25043008e-03 1.67296694e-03 2.22835876e-03 2.95496720e-03
+ 3.90112639e-03 5.12739977e-03 6.70925256e-03 8.74019060e-03
+ 1.13354161e-02 1.46360484e-02 1.88139509e-02 2.40771999e-02
+ 3.06762136e-02 3.89105464e-02 4.91363292e-02 6.17743082e-02
+ 7.73184028e-02 9.63446626e-02 1.19520458e-01 1.47613691e-01
+ 1.81501756e-01 2.22179931e-01 2.70768803e-01 3.28520310e-01
+ 3.96821895e-01 4.77198238e-01 5.71310016e-01 6.80949095e-01
+ 8.08029577e-01 9.54574155e-01 1.12269526e+00 1.31457057e+00
+ 1.53241264e+00 1.77843235e+00 2.05479630e+00 2.36357834e+00
+ 2.70670566e+00 3.08590011e+00 3.50261577e+00 3.95797398e+00
+ 4.45269732e+00 4.98704418e+00 5.56074601e+00 6.17294922e+00
+ 6.82216396e+00 7.50622198e+00 8.22224581e+00 8.96663128e+00
+ 9.73504512e+00 1.05224393e+01 1.13230830e+01 1.21306132e+01
+ 1.29381035e+01 1.37381511e+01 1.45229807e+01 1.52845633e+01
+ 1.60147481e+01 1.67054042e+01 1.73485695e+01 1.79366012e+01
+ 1.84623269e+01 1.89191894e+01 1.93013824e+01 1.96039735e+01
+ 1.98230100e+01 1.99556049e+01 2.00000000e+01 1.99556049e+01
+ 1.98230100e+01 1.96039735e+01 1.93013824e+01 1.89191894e+01
+ 1.84623269e+01 1.79366012e+01 1.73485695e+01 1.67054042e+01
+ 1.60147481e+01 1.52845633e+01 1.45229807e+01 1.37381511e+01
+ 1.29381035e+01 1.21306132e+01 1.13230830e+01 1.05224393e+01
+ 9.73504512e+00 8.96663128e+00 8.22224581e+00 7.50622198e+00
+ 6.82216396e+00 6.17294922e+00 5.56074601e+00 4.98704418e+00
+ 4.45269732e+00 3.95797398e+00 3.50261577e+00 3.08590011e+00
+ 2.70670566e+00]
+[3.73289382e+15 5.08386930e+15 6.89307366e+15 9.30467619e+15
+ 1.25043008e+16 1.67296694e+16 2.22835876e+16 2.95496720e+16
+ 3.90112639e+16 5.12739977e+16 6.70925256e+16 8.74019060e+16
+ 1.13354161e+17 1.46360484e+17 1.88139509e+17 2.40771999e+17
+ 3.06762136e+17 3.89105464e+17 4.91363292e+17 6.17743082e+17
+ 7.73184028e+17 9.63446626e+17 1.19520458e+18 1.47613691e+18
+ 1.81501756e+18 2.22179931e+18 2.70768803e+18 3.28520310e+18
+ 3.96821895e+18 4.77198238e+18 5.71310016e+18 6.80949095e+18
+ 8.08029577e+18 9.54574155e+18 1.12269526e+19 1.31457057e+19
+ 1.53241264e+19 1.77843235e+19 2.05479630e+19 2.36357834e+19
+ 2.70670566e+19 3.08590011e+19 3.50261577e+19 3.95797398e+19
+ 4.45269732e+19 4.98704418e+19 5.56074601e+19 6.17294922e+19
+ 6.82216396e+19 7.50622198e+19 8.22224581e+19 8.96663128e+19
+ 9.73504512e+19 1.05224393e+20 1.13230830e+20 1.21306132e+20
+ 1.29381035e+20 1.37381511e+20 1.45229807e+20 1.52845633e+20
+ 1.60147481e+20 1.67054042e+20 1.73485695e+20 1.79366012e+20
+ 1.84623269e+20 1.89191894e+20 1.93013824e+20 1.96039735e+20
+ 1.98230100e+20 1.99556049e+20 2.00000000e+20 1.99556049e+20
+ 1.98230100e+20 1.96039735e+20 1.93013824e+20 1.89191894e+20
+ 1.84623269e+20 1.79366012e+20 1.73485695e+20 1.67054042e+20
+ 1.60147481e+20 1.52845633e+20 1.45229807e+20 1.37381511e+20
+ 1.29381035e+20 1.21306132e+20 1.13230830e+20 1.05224393e+20
+ 9.73504512e+19 8.96663128e+19 8.22224581e+19 7.50622198e+19
+ 6.82216396e+19 6.17294922e+19 5.56074601e+19 4.98704418e+19
+ 4.45269732e+19 3.95797398e+19 3.50261577e+19 3.08590011e+19
+ 2.70670566e+19]
+rho sn_trans 4 100
+integrated :  1.5106248833040564e+22
+PELLET step finished
+EQ step
+>>> efit.step() started
+INPUT: PRESSURE found kinetic , mapped value =  kinetic
+INPUT: RELAX_PROFILE not found, use default value: 0
+INPUT: RELAX_METRIC not found, use default value: 0.5
+INPUT: BETAN_TARGET not found, use default value: -1.0
+model_pressure = kinetic
+betan = 1.2774401985805914
+INPUT: TOPOLOGY found DN , mapped value =  DN
+INPUT: ERROR not found, use default value: 1.0e-4
+INPUT: MAX_EFIT_ERROR not found, use default value: 0.1
+init_run_step = 0
+niter =  10
+*** generate kfile 0
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+ip, ip cal, ip/(ip cal) = 10.000 10.003 1.000
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+run efit
+efit, subprocess
+elapsed time =  0.332  1.191
+error_efit = 8.296e-05
+*** generate kfile 1
+apply underrelaxation
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+inmtric under-relax: 0.5
+ip, ip cal, ip/(ip cal) = 10.000 9.985 1.001
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+diff_p = 0.00035282422429919836
+diff_f = 0.0006588687871299035
+converged
+  ps_init_tag: Plasma State v2.055 f90 module initialization.
+  %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
+  %ps_update_fromxplasma: allocating nlim   =            5
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_nclass: allocating 16 Pfirsch-Schlutter moments profiles.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
+  %ps_update_fromxplasma: allocating nlim   =            5
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_nclass: allocating 16 Pfirsch-Schlutter moments profiles.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
+  %ps_update_fromxplasma: allocating nlim   =            5
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_nclass: allocating 16 Pfirsch-Schlutter moments profiles.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
+  %ps_update_fromxplasma: allocating nlim   =            5
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_nclass: allocating 16 Pfirsch-Schlutter moments profiles.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
+  %ps_update_fromxplasma: allocating nlim   =            5
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_nclass: allocating 16 Pfirsch-Schlutter moments profiles.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
+  %ps_update_fromxplasma: allocating nlim   =            5
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+Icurt=9.968e+00MA
+EQ step finished
+TR step
+fastran.step() entered
+update_next = disabled
+update_instate =  True
+[1, 1, 74]
+['D', 'T', 'W']
+ion D
+ion T
+imp W
+model_beam = 0
+dump_vol_profile : rho_nbi pbe 0.0
+dump_vol_profile : rho_nbi pbi 0.0
+dump_vol_profile : rho_nbi pbth 0.0
+dump_vol_profile : rho_nbi pbth 0.0
+dump_vol_profile : rho_fus pfuse 45144500.87649617
+dump_vol_profile : rho_fus pfusi 15261208.738351773
+dump_vol_profile : rho_fus pfusth 0.0
+dump_vol_profile : rho_ecrf peech 0.0
+dump_vol_profile : rho_icrf picrf_totals 13153037.32754057
+dump_vol_profile : rho_lhrf pelh 0.0
+S_name =  ['e                               ' 'D                               '
+ 'T                               ' 'W                               ']
+0 e                               
+1 D                               
+processing 1 D                               
+dump_vol_profile : rho_icrf picrf_totals 73.41847157861167
+2 T                               
+processing 2 T                               
+dump_vol_profile : rho_icrf picrf_totals 26846889.253987737
+3 W                               
+processing 3 W                               
+dump_vol_profile : rho_icrf picrf_totals 0.0
+dump_vol_profile : rho_lhrf pilh 0.0
+dump_vol_profile : rho_nbi tqbe 0.0
+dump_vol_profile : rho_nbi tqbi 0.0
+dump_vol_profile : rho_nbi tqbjxb 0.0
+dump_vol_profile : rho_nbi tqbth 0.0
+dump_vol_profile : rho_nbi sbedep 0.0
+dump_vol_profile : rho_nbi sbehalo 0.0
+dump_vol_profile : rho sn_trans 1.5106248833040564e+22
+dump_vol_profile : rho_rad prad 0.0
+dump_vol_profile : rho pohme 0.0
+/global/common/software/atom/perlmutter/binaries/fastran/default/xfastran_ver1.00_ser
+ncpu =  1
+n1d  =  1
+nky  =  1
+[1, 1, 74]
+['D', 'T', 'W']
+ion D
+ion T
+imp W
+nspec_th = 3
+Icurt=1.000e+01MA
+Icurr_bootstrap=1.713e+00MA
+Icurr_ohmic=0.000e+00MA
+rho_fus pfuse 100 100
+integrated :  44732395.47131255
+rho_fus pfusi 100 100
+integrated :  15229986.630071105
+model_beam = 0
+density_model = 1: impurity = f*ne
+TR step finished
+
+========================================================================
+= fastran driver: iteration number =  2
+
+IC step
+toric.step() called
+cur_state_file =  s000001.00001
+('Total IC power = ', 40000000.0)
+power =  40000000.0
+ using s000001.00001 as default state.
+  ps_init_tag: Plasma State v2.055 f90 module initialization.
+ Prepare toric input reading machine.inp
+ ps%ns(1,0)   2.4503209681475820E+020
+ <n_e(m-3)-PS> =   1.8238177669305526E+020
+ <n_e(m-3)-Interpolated> =   1.8320321167128956E+020
+ Thermal ion name, A, Z, dens, temp = 
+ D           2           1   1.2136036685479136E+020   19.780360403090203     
+ Thermal ion name, A, Z, dens, temp = 
+ T           3           1   1.2136036685479136E+020   19.780360403090203     
+ Thermal ion name, A, Z, dens, temp = 
+ W         182          74   31224503955496612.        19.780360403090203     
+ Fast ion name, A, Z = D_beam           2           1
+ Fast ion name, A, Z = He4_fusn           4           2
+('prepare_eqdsk', '/global/common/software/atom/perlmutter/binaries/geqxpl/default/geqxpl', 'g000001.00001')
+  
+  G-EQdsk data accepted, maximum rel. GS error:    1.0372019057644833E-002
+  
+  Bphi is counter-clockwise viewed from above (nsnccwb = 1)
+  
+  Jphi is counter-clockwise viewed from above (nsnccwi = 1)
+  
+ equigs_write completion code (0=normal):           0
+('toric processors = ', '24')
+  -- get (restore) plasma state from file -- 
+ process_toric_output: cur_state_file = s000001.00001
+  ps_init_tag: Plasma State v2.055 f90 module initialization.
+ freq_ic, picrf  alloc? T T
+ RF alloc? T         600
+    number of icrf sources =            1
+    number of species =            5           3
+ process toric output: profile and spec sizes:
+ toric mesh, PS mesh         459         101
+ toric species, PS species counts           5           3
+ powers in percent
+ total:   100.00000000000000     
+ electron total   28.767866314980619        3.7036724910587999     
+ ion totals fundamental   1.4526611451030181E-004   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ ion totals harmonic   0.0000000000000000        67.528315927846066        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+    number of thermal species (ps%nspec_th) =            3
+    number of icrf sources (ps%nicrf_src) =            1
+ ps%freq_ic =    0.0000000000000000     
+ ps%icrf_src_name = IC00                            
+ ps%power_ic =    40000000.000000000     
+ ICRF Power   40000000.000000000     
+   --storing toric data in current plasma state
+ Total FW Driven Current (A)   357151.96477445273     
+ Total ICRF Power (W)   40000000.000000000     
+ FWCD Effciency (A/W)   8.9287991193613189E-003
+ Total FW Driven Current from each source-> Interpolated (A)   357151.96477445273     
+ Total FW Driven Current from all sources -> Interpolated (A)   357151.96477445273     
+  *ps_update_file_write: normal exit,            5  update elements written.
+ Stored Partial RF Plasma State
+ electron power, integral
+   12988121.640483232      Watts
+ FW ion power, integral
+   27011878.359516576      Watts
+('merged TORIC plasma state data ', '/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_everythingevol/SCAN/work/rf_ic_toric_5/RF_IC_s000001.00001')
+IC step finished
+PELLET step
+pellet_model.init() started
+start dakota update
+npellet = 1
+sn_peak = [20.0]
+xmid = [0.7]
+xwid = [0.15]
+[3.73289382e-04 5.08386930e-04 6.89307366e-04 9.30467619e-04
+ 1.25043008e-03 1.67296694e-03 2.22835876e-03 2.95496720e-03
+ 3.90112639e-03 5.12739977e-03 6.70925256e-03 8.74019060e-03
+ 1.13354161e-02 1.46360484e-02 1.88139509e-02 2.40771999e-02
+ 3.06762136e-02 3.89105464e-02 4.91363292e-02 6.17743082e-02
+ 7.73184028e-02 9.63446626e-02 1.19520458e-01 1.47613691e-01
+ 1.81501756e-01 2.22179931e-01 2.70768803e-01 3.28520310e-01
+ 3.96821895e-01 4.77198238e-01 5.71310016e-01 6.80949095e-01
+ 8.08029577e-01 9.54574155e-01 1.12269526e+00 1.31457057e+00
+ 1.53241264e+00 1.77843235e+00 2.05479630e+00 2.36357834e+00
+ 2.70670566e+00 3.08590011e+00 3.50261577e+00 3.95797398e+00
+ 4.45269732e+00 4.98704418e+00 5.56074601e+00 6.17294922e+00
+ 6.82216396e+00 7.50622198e+00 8.22224581e+00 8.96663128e+00
+ 9.73504512e+00 1.05224393e+01 1.13230830e+01 1.21306132e+01
+ 1.29381035e+01 1.37381511e+01 1.45229807e+01 1.52845633e+01
+ 1.60147481e+01 1.67054042e+01 1.73485695e+01 1.79366012e+01
+ 1.84623269e+01 1.89191894e+01 1.93013824e+01 1.96039735e+01
+ 1.98230100e+01 1.99556049e+01 2.00000000e+01 1.99556049e+01
+ 1.98230100e+01 1.96039735e+01 1.93013824e+01 1.89191894e+01
+ 1.84623269e+01 1.79366012e+01 1.73485695e+01 1.67054042e+01
+ 1.60147481e+01 1.52845633e+01 1.45229807e+01 1.37381511e+01
+ 1.29381035e+01 1.21306132e+01 1.13230830e+01 1.05224393e+01
+ 9.73504512e+00 8.96663128e+00 8.22224581e+00 7.50622198e+00
+ 6.82216396e+00 6.17294922e+00 5.56074601e+00 4.98704418e+00
+ 4.45269732e+00 3.95797398e+00 3.50261577e+00 3.08590011e+00
+ 2.70670566e+00]
+[3.73289382e+15 5.08386930e+15 6.89307366e+15 9.30467619e+15
+ 1.25043008e+16 1.67296694e+16 2.22835876e+16 2.95496720e+16
+ 3.90112639e+16 5.12739977e+16 6.70925256e+16 8.74019060e+16
+ 1.13354161e+17 1.46360484e+17 1.88139509e+17 2.40771999e+17
+ 3.06762136e+17 3.89105464e+17 4.91363292e+17 6.17743082e+17
+ 7.73184028e+17 9.63446626e+17 1.19520458e+18 1.47613691e+18
+ 1.81501756e+18 2.22179931e+18 2.70768803e+18 3.28520310e+18
+ 3.96821895e+18 4.77198238e+18 5.71310016e+18 6.80949095e+18
+ 8.08029577e+18 9.54574155e+18 1.12269526e+19 1.31457057e+19
+ 1.53241264e+19 1.77843235e+19 2.05479630e+19 2.36357834e+19
+ 2.70670566e+19 3.08590011e+19 3.50261577e+19 3.95797398e+19
+ 4.45269732e+19 4.98704418e+19 5.56074601e+19 6.17294922e+19
+ 6.82216396e+19 7.50622198e+19 8.22224581e+19 8.96663128e+19
+ 9.73504512e+19 1.05224393e+20 1.13230830e+20 1.21306132e+20
+ 1.29381035e+20 1.37381511e+20 1.45229807e+20 1.52845633e+20
+ 1.60147481e+20 1.67054042e+20 1.73485695e+20 1.79366012e+20
+ 1.84623269e+20 1.89191894e+20 1.93013824e+20 1.96039735e+20
+ 1.98230100e+20 1.99556049e+20 2.00000000e+20 1.99556049e+20
+ 1.98230100e+20 1.96039735e+20 1.93013824e+20 1.89191894e+20
+ 1.84623269e+20 1.79366012e+20 1.73485695e+20 1.67054042e+20
+ 1.60147481e+20 1.52845633e+20 1.45229807e+20 1.37381511e+20
+ 1.29381035e+20 1.21306132e+20 1.13230830e+20 1.05224393e+20
+ 9.73504512e+19 8.96663128e+19 8.22224581e+19 7.50622198e+19
+ 6.82216396e+19 6.17294922e+19 5.56074601e+19 4.98704418e+19
+ 4.45269732e+19 3.95797398e+19 3.50261577e+19 3.08590011e+19
+ 2.70670566e+19]
+rho sn_trans 4 100
+integrated :  1.5085891612481212e+22
+PELLET step finished
+EQ step
+>>> efit.step() started
+INPUT: PRESSURE found kinetic , mapped value =  kinetic
+INPUT: RELAX_PROFILE not found, use default value: 0
+INPUT: RELAX_METRIC not found, use default value: 0.5
+INPUT: BETAN_TARGET not found, use default value: -1.0
+model_pressure = kinetic
+betan = 1.2538643173751318
+INPUT: TOPOLOGY found DN , mapped value =  DN
+INPUT: ERROR not found, use default value: 1.0e-4
+INPUT: MAX_EFIT_ERROR not found, use default value: 0.1
+init_run_step = 0
+niter =  10
+*** generate kfile 0
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+ip, ip cal, ip/(ip cal) = 10.000 10.003 1.000
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+run efit
+efit, subprocess
+elapsed time =  0.337  1.401
+error_efit = 9.168e-05
+*** generate kfile 1
+apply underrelaxation
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+inmtric under-relax: 0.5
+ip, ip cal, ip/(ip cal) = 10.000 9.999 1.000
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+diff_p = 0.0002055231615269541
+diff_f = 0.0002831908743928325
+converged
+Icurt=9.995e+00MA
+EQ step finished
+TR step
+fastran.step() entered
+update_next = disabled
+update_instate =  True
+[1, 1, 74]
+['D', 'T', 'W']
+ion D
+ion T
+imp W
+model_beam = 0
+dump_vol_profile : rho_nbi pbe 0.0
+dump_vol_profile : rho_nbi pbi 0.0
+dump_vol_profile : rho_nbi pbth 0.0
+dump_vol_profile : rho_nbi pbth 0.0
+dump_vol_profile : rho_fus pfuse 44732395.47131255
+dump_vol_profile : rho_fus pfusi 15229986.630071105
+dump_vol_profile : rho_fus pfusth 0.0
+dump_vol_profile : rho_ecrf peech 0.0
+dump_vol_profile : rho_icrf picrf_totals 12988121.640483232
+dump_vol_profile : rho_lhrf pelh 0.0
+S_name =  ['e                               ' 'D                               '
+ 'T                               ' 'W                               ']
+0 e                               
+1 D                               
+processing 1 D                               
+dump_vol_profile : rho_icrf picrf_totals 111.47279940318651
+2 T                               
+processing 2 T                               
+dump_vol_profile : rho_icrf picrf_totals 27011766.886717178
+3 W                               
+processing 3 W                               
+dump_vol_profile : rho_icrf picrf_totals 0.0
+dump_vol_profile : rho_lhrf pilh 0.0
+dump_vol_profile : rho_nbi tqbe 0.0
+dump_vol_profile : rho_nbi tqbi 0.0
+dump_vol_profile : rho_nbi tqbjxb 0.0
+dump_vol_profile : rho_nbi tqbth 0.0
+dump_vol_profile : rho_nbi sbedep 0.0
+dump_vol_profile : rho_nbi sbehalo 0.0
+dump_vol_profile : rho sn_trans 1.5085891612481212e+22
+dump_vol_profile : rho_rad prad 0.0
+dump_vol_profile : rho pohme 0.0
+/global/common/software/atom/perlmutter/binaries/fastran/default/xfastran_ver1.00_ser
+ncpu =  1
+n1d  =  1
+nky  =  1
+[1, 1, 74]
+['D', 'T', 'W']
+ion D
+ion T
+imp W
+nspec_th = 3
+Icurt=1.000e+01MA
+Icurr_bootstrap=1.707e+00MA
+Icurr_ohmic=0.000e+00MA
+rho_fus pfuse 100 100
+integrated :  44895046.79257601
+rho_fus pfusi 100 100
+integrated :  15270807.816847866
+model_beam = 0
+density_model = 1: impurity = f*ne
+TR step finished
+
+========================================================================
+= fastran driver: iteration number =  3
+
+IC step
+toric.step() called
+cur_state_file =  s000001.00001
+('Total IC power = ', 40000000.0)
+power =  40000000.0
+ using s000001.00001 as default state.
+  ps_init_tag: Plasma State v2.055 f90 module initialization.
+ Prepare toric input reading machine.inp
+ ps%ns(1,0)   2.4536267108404275E+020
+ <n_e(m-3)-PS> =   1.8297316419736447E+020
+ <n_e(m-3)-Interpolated> =   1.8380340488919499E+020
+ Thermal ion name, A, Z, dens, temp = 
+ D           2           1   1.2116850913466955E+020   20.036455803985223     
+ Thermal ion name, A, Z, dens, temp = 
+ T           3           1   1.2116850913466955E+020   20.036455803985223     
+ Thermal ion name, A, Z, dens, temp = 
+ W         182          74   40877067597769192.        20.036455803985223     
+ Fast ion name, A, Z = D_beam           2           1
+ Fast ion name, A, Z = He4_fusn           4           2
+('prepare_eqdsk', '/global/common/software/atom/perlmutter/binaries/geqxpl/default/geqxpl', 'g000001.00001')
+  
+  G-EQdsk data accepted, maximum rel. GS error:    1.1595393916839603E-002
+  
+  Bphi is counter-clockwise viewed from above (nsnccwb = 1)
+  
+  Jphi is counter-clockwise viewed from above (nsnccwi = 1)
+  
+ equigs_write completion code (0=normal):           0
+('toric processors = ', '24')
+  -- get (restore) plasma state from file -- 
+ process_toric_output: cur_state_file = s000001.00001
+  ps_init_tag: Plasma State v2.055 f90 module initialization.
+ freq_ic, picrf  alloc? T T
+ RF alloc? T         600
+    number of icrf sources =            1
+    number of species =            5           3
+ process toric output: profile and spec sizes:
+ toric mesh, PS mesh         459         101
+ toric species, PS species counts           5           3
+ powers in percent
+ total:   100.00000000000001     
+ electron total   28.578150632833715        3.7826238120255717     
+ ion totals fundamental   3.8419649678680143E-004   0.0000000000000000        0.0000000000000000        9.2356379530278420E-019   0.0000000000000000     
+ ion totals harmonic   0.0000000000000000        67.638841358643944        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+    number of thermal species (ps%nspec_th) =            3
+    number of icrf sources (ps%nicrf_src) =            1
+ ps%freq_ic =    0.0000000000000000     
+ ps%icrf_src_name = IC00                            
+ ps%power_ic =    40000000.000000000     
+ ICRF Power   40000000.000000000     
+   --storing toric data in current plasma state
+ Total FW Driven Current (A)   323464.11751804134     
+ Total ICRF Power (W)   40000000.000000000     
+ FWCD Effciency (A/W)   8.0866029379510328E-003
+ Total FW Driven Current from each source-> Interpolated (A)   323464.11751804053     
+ Total FW Driven Current from all sources -> Interpolated (A)   323464.11751804053     
+  *ps_update_file_write: normal exit,            5  update elements written.
+ Stored Partial RF Plasma State
+ electron power, integral
+   12943566.394370697      Watts
+ FW ion power, integral
+   27056433.605628889      Watts
+('merged TORIC plasma state data ', '/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_everythingevol/SCAN/work/rf_ic_toric_5/RF_IC_s000001.00001')
+IC step finished
+PELLET step
+pellet_model.init() started
+start dakota update
+npellet = 1
+sn_peak = [20.0]
+xmid = [0.7]
+xwid = [0.15]
+[3.73289382e-04 5.08386930e-04 6.89307366e-04 9.30467619e-04
+ 1.25043008e-03 1.67296694e-03 2.22835876e-03 2.95496720e-03
+ 3.90112639e-03 5.12739977e-03 6.70925256e-03 8.74019060e-03
+ 1.13354161e-02 1.46360484e-02 1.88139509e-02 2.40771999e-02
+ 3.06762136e-02 3.89105464e-02 4.91363292e-02 6.17743082e-02
+ 7.73184028e-02 9.63446626e-02 1.19520458e-01 1.47613691e-01
+ 1.81501756e-01 2.22179931e-01 2.70768803e-01 3.28520310e-01
+ 3.96821895e-01 4.77198238e-01 5.71310016e-01 6.80949095e-01
+ 8.08029577e-01 9.54574155e-01 1.12269526e+00 1.31457057e+00
+ 1.53241264e+00 1.77843235e+00 2.05479630e+00 2.36357834e+00
+ 2.70670566e+00 3.08590011e+00 3.50261577e+00 3.95797398e+00
+ 4.45269732e+00 4.98704418e+00 5.56074601e+00 6.17294922e+00
+ 6.82216396e+00 7.50622198e+00 8.22224581e+00 8.96663128e+00
+ 9.73504512e+00 1.05224393e+01 1.13230830e+01 1.21306132e+01
+ 1.29381035e+01 1.37381511e+01 1.45229807e+01 1.52845633e+01
+ 1.60147481e+01 1.67054042e+01 1.73485695e+01 1.79366012e+01
+ 1.84623269e+01 1.89191894e+01 1.93013824e+01 1.96039735e+01
+ 1.98230100e+01 1.99556049e+01 2.00000000e+01 1.99556049e+01
+ 1.98230100e+01 1.96039735e+01 1.93013824e+01 1.89191894e+01
+ 1.84623269e+01 1.79366012e+01 1.73485695e+01 1.67054042e+01
+ 1.60147481e+01 1.52845633e+01 1.45229807e+01 1.37381511e+01
+ 1.29381035e+01 1.21306132e+01 1.13230830e+01 1.05224393e+01
+ 9.73504512e+00 8.96663128e+00 8.22224581e+00 7.50622198e+00
+ 6.82216396e+00 6.17294922e+00 5.56074601e+00 4.98704418e+00
+ 4.45269732e+00 3.95797398e+00 3.50261577e+00 3.08590011e+00
+ 2.70670566e+00]
+[3.73289382e+15 5.08386930e+15 6.89307366e+15 9.30467619e+15
+ 1.25043008e+16 1.67296694e+16 2.22835876e+16 2.95496720e+16
+ 3.90112639e+16 5.12739977e+16 6.70925256e+16 8.74019060e+16
+ 1.13354161e+17 1.46360484e+17 1.88139509e+17 2.40771999e+17
+ 3.06762136e+17 3.89105464e+17 4.91363292e+17 6.17743082e+17
+ 7.73184028e+17 9.63446626e+17 1.19520458e+18 1.47613691e+18
+ 1.81501756e+18 2.22179931e+18 2.70768803e+18 3.28520310e+18
+ 3.96821895e+18 4.77198238e+18 5.71310016e+18 6.80949095e+18
+ 8.08029577e+18 9.54574155e+18 1.12269526e+19 1.31457057e+19
+ 1.53241264e+19 1.77843235e+19 2.05479630e+19 2.36357834e+19
+ 2.70670566e+19 3.08590011e+19 3.50261577e+19 3.95797398e+19
+ 4.45269732e+19 4.98704418e+19 5.56074601e+19 6.17294922e+19
+ 6.82216396e+19 7.50622198e+19 8.22224581e+19 8.96663128e+19
+ 9.73504512e+19 1.05224393e+20 1.13230830e+20 1.21306132e+20
+ 1.29381035e+20 1.37381511e+20 1.45229807e+20 1.52845633e+20
+ 1.60147481e+20 1.67054042e+20 1.73485695e+20 1.79366012e+20
+ 1.84623269e+20 1.89191894e+20 1.93013824e+20 1.96039735e+20
+ 1.98230100e+20 1.99556049e+20 2.00000000e+20 1.99556049e+20
+ 1.98230100e+20 1.96039735e+20 1.93013824e+20 1.89191894e+20
+ 1.84623269e+20 1.79366012e+20 1.73485695e+20 1.67054042e+20
+ 1.60147481e+20 1.52845633e+20 1.45229807e+20 1.37381511e+20
+ 1.29381035e+20 1.21306132e+20 1.13230830e+20 1.05224393e+20
+ 9.73504512e+19 8.96663128e+19 8.22224581e+19 7.50622198e+19
+ 6.82216396e+19 6.17294922e+19 5.56074601e+19 4.98704418e+19
+ 4.45269732e+19 3.95797398e+19 3.50261577e+19 3.08590011e+19
+ 2.70670566e+19]
+rho sn_trans 4 100
+integrated :  1.507572484956135e+22
+PELLET step finished
+EQ step
+>>> efit.step() started
+INPUT: PRESSURE found kinetic , mapped value =  kinetic
+INPUT: RELAX_PROFILE not found, use default value: 0
+INPUT: RELAX_METRIC not found, use default value: 0.5
+INPUT: BETAN_TARGET not found, use default value: -1.0
+model_pressure = kinetic
+betan = 1.239439830701673
+INPUT: TOPOLOGY found DN , mapped value =  DN
+INPUT: ERROR not found, use default value: 1.0e-4
+INPUT: MAX_EFIT_ERROR not found, use default value: 0.1
+init_run_step = 0
+niter =  10
+*** generate kfile 0
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+ip, ip cal, ip/(ip cal) = 10.000 10.003 1.000
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+run efit
+efit, subprocess
+elapsed time =  0.328  1.205
+error_efit = 9.05e-05
+*** generate kfile 1
+apply underrelaxation
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+inmtric under-relax: 0.5
+ip, ip cal, ip/(ip cal) = 10.000 10.000 1.000
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+diff_p = 0.00028193855545081514
+diff_f = 0.00045899658373013897
+converged
+  %ps_mhdeq_nclass: allocating 16 Pfirsch-Schlutter moments profiles.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
+  %ps_update_fromxplasma: allocating nlim   =            5
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_nclass: allocating 16 Pfirsch-Schlutter moments profiles.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
+  %ps_update_fromxplasma: allocating nlim   =            5
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_nclass: allocating 16 Pfirsch-Schlutter moments profiles.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
+  %ps_update_fromxplasma: allocating nlim   =            5
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_nclass: allocating 16 Pfirsch-Schlutter moments profiles.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
+  %ps_update_fromxplasma: allocating nlim   =            5
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_nclass: allocating 16 Pfirsch-Schlutter moments profiles.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
+  %ps_update_fromxplasma: allocating nlim   =            5
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_nclass: allocating 16 Pfirsch-Schlutter moments profiles.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+  %ps_mhdeq_derive: compute R & Z minmax profiles; triangularity, etc.
+  %ps_mhdeq_derive: compute <1/B^2>, NCLASS moments, etc.
+  %ps_mhdeq_derive: compute NC sqrt-singular flux surface averages.
+  %ps_mhdeq_derive: compute profiles of Bmin, Bmax.
+  %ps_update_fromxplasma: allocating nr,nz  =          129 ,         129
+  %ps_update_fromxplasma: allocating nlim   =            5
+  %ps_mhdeq_derive: compute <1/R^2> and <|grad(rho)|^2/R^2>.
+  %ps_mhdeq_derive: compute metric averages <1/R>, <|grad(rho)|>, etc.
+Icurt=9.998e+00MA
+EQ step finished
+TR step
+fastran.step() entered
+update_next = disabled
+update_instate =  True
+[1, 1, 74]
+['D', 'T', 'W']
+ion D
+ion T
+imp W
+model_beam = 0
+dump_vol_profile : rho_nbi pbe 0.0
+dump_vol_profile : rho_nbi pbi 0.0
+dump_vol_profile : rho_nbi pbth 0.0
+dump_vol_profile : rho_nbi pbth 0.0
+dump_vol_profile : rho_fus pfuse 44895046.79257601
+dump_vol_profile : rho_fus pfusi 15270807.816847866
+dump_vol_profile : rho_fus pfusth 0.0
+dump_vol_profile : rho_ecrf peech 0.0
+dump_vol_profile : rho_icrf picrf_totals 12943566.394370697
+dump_vol_profile : rho_lhrf pelh 0.0
+S_name =  ['e                               ' 'D                               '
+ 'T                               ' 'W                               ']
+0 e                               
+1 D                               
+processing 1 D                               
+dump_vol_profile : rho_icrf picrf_totals 254.32237725123346
+2 T                               
+processing 2 T                               
+dump_vol_profile : rho_icrf picrf_totals 27056179.283251658
+3 W                               
+processing 3 W                               
+dump_vol_profile : rho_icrf picrf_totals 0.0
+dump_vol_profile : rho_lhrf pilh 0.0
+dump_vol_profile : rho_nbi tqbe 0.0
+dump_vol_profile : rho_nbi tqbi 0.0
+dump_vol_profile : rho_nbi tqbjxb 0.0
+dump_vol_profile : rho_nbi tqbth 0.0
+dump_vol_profile : rho_nbi sbedep 0.0
+dump_vol_profile : rho_nbi sbehalo 0.0
+dump_vol_profile : rho sn_trans 1.507572484956135e+22
+dump_vol_profile : rho_rad prad 0.0
+dump_vol_profile : rho pohme 0.0
+/global/common/software/atom/perlmutter/binaries/fastran/default/xfastran_ver1.00_ser
+ncpu =  1
+n1d  =  1
+nky  =  1
+[1, 1, 74]
+['D', 'T', 'W']
+ion D
+ion T
+imp W
+nspec_th = 3
+Icurt=1.000e+01MA
+Icurr_bootstrap=1.692e+00MA
+Icurr_ohmic=0.000e+00MA
+rho_fus pfuse 100 100
+integrated :  45427156.949402496
+rho_fus pfusi 100 100
+integrated :  15431910.572126113
+model_beam = 0
+density_model = 1: impurity = f*ne
+TR step finished
+
+========================================================================
+= fastran driver: iteration number =  4
+
+IC step
+toric.step() called
+cur_state_file =  s000001.00001
+('Total IC power = ', 40000000.0)
+power =  40000000.0
+ using s000001.00001 as default state.
+  ps_init_tag: Plasma State v2.055 f90 module initialization.
+ Prepare toric input reading machine.inp
+ ps%ns(1,0)   2.4244938072718177E+020
+ <n_e(m-3)-PS> =   1.8268745319907292E+020
+ <n_e(m-3)-Interpolated> =   1.8352644900382432E+020
+ Thermal ion name, A, Z, dens, temp = 
+ D           2           1   1.1937981112245245E+020   20.237596478052126     
+ Thermal ion name, A, Z, dens, temp = 
+ T           3           1   1.1937981112245245E+020   20.237596478052126     
+ Thermal ion name, A, Z, dens, temp = 
+ W         182          74   49851468510920944.        20.237596478052126     
+ Fast ion name, A, Z = D_beam           2           1
+ Fast ion name, A, Z = He4_fusn           4           2
+('prepare_eqdsk', '/global/common/software/atom/perlmutter/binaries/geqxpl/default/geqxpl', 'g000001.00001')
+  
+  G-EQdsk data accepted, maximum rel. GS error:    1.2219068210529418E-002
+  
+  Bphi is counter-clockwise viewed from above (nsnccwb = 1)
+  
+  Jphi is counter-clockwise viewed from above (nsnccwi = 1)
+  
+ equigs_write completion code (0=normal):           0
+('toric processors = ', '24')
+  -- get (restore) plasma state from file -- 
+ process_toric_output: cur_state_file = s000001.00001
+  ps_init_tag: Plasma State v2.055 f90 module initialization.
+ freq_ic, picrf  alloc? T T
+ RF alloc? T         600
+    number of icrf sources =            1
+    number of species =            5           3
+ process toric output: profile and spec sizes:
+ toric mesh, PS mesh         459         101
+ toric species, PS species counts           5           3
+ powers in percent
+ total:   100.00000000000000     
+ electron total   28.673942159594763        3.8344218341473106     
+ ion totals fundamental   1.8048683417450372E-004   0.0000000000000000        0.0000000000000000        2.4555299402649909E-019   0.0000000000000000     
+ ion totals harmonic   0.0000000000000000        67.491455519423752        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+    number of thermal species (ps%nspec_th) =            3
+    number of icrf sources (ps%nicrf_src) =            1
+ ps%freq_ic =    0.0000000000000000     
+ ps%icrf_src_name = IC00                            
+ ps%power_ic =    40000000.000000000     
+ ICRF Power   40000000.000000000     
+   --storing toric data in current plasma state
+ Total FW Driven Current (A)   310581.55748283863     
+ Total ICRF Power (W)   40000000.000000000     
+ FWCD Effciency (A/W)   7.7645389370709656E-003
+ Total FW Driven Current from each source-> Interpolated (A)   310581.55748283910     
+ Total FW Driven Current from all sources -> Interpolated (A)   310581.55748283910     
+  *ps_update_file_write: normal exit,            5  update elements written.
+ Stored Partial RF Plasma State
+ electron power, integral
+   13003422.154928172      Watts
+ FW ion power, integral
+   26996577.845071685      Watts
+('merged TORIC plasma state data ', '/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_everythingevol/SCAN/work/rf_ic_toric_5/RF_IC_s000001.00001')
+IC step finished
+PELLET step
+pellet_model.init() started
+start dakota update
+npellet = 1
+sn_peak = [20.0]
+xmid = [0.7]
+xwid = [0.15]
+[3.73289382e-04 5.08386930e-04 6.89307366e-04 9.30467619e-04
+ 1.25043008e-03 1.67296694e-03 2.22835876e-03 2.95496720e-03
+ 3.90112639e-03 5.12739977e-03 6.70925256e-03 8.74019060e-03
+ 1.13354161e-02 1.46360484e-02 1.88139509e-02 2.40771999e-02
+ 3.06762136e-02 3.89105464e-02 4.91363292e-02 6.17743082e-02
+ 7.73184028e-02 9.63446626e-02 1.19520458e-01 1.47613691e-01
+ 1.81501756e-01 2.22179931e-01 2.70768803e-01 3.28520310e-01
+ 3.96821895e-01 4.77198238e-01 5.71310016e-01 6.80949095e-01
+ 8.08029577e-01 9.54574155e-01 1.12269526e+00 1.31457057e+00
+ 1.53241264e+00 1.77843235e+00 2.05479630e+00 2.36357834e+00
+ 2.70670566e+00 3.08590011e+00 3.50261577e+00 3.95797398e+00
+ 4.45269732e+00 4.98704418e+00 5.56074601e+00 6.17294922e+00
+ 6.82216396e+00 7.50622198e+00 8.22224581e+00 8.96663128e+00
+ 9.73504512e+00 1.05224393e+01 1.13230830e+01 1.21306132e+01
+ 1.29381035e+01 1.37381511e+01 1.45229807e+01 1.52845633e+01
+ 1.60147481e+01 1.67054042e+01 1.73485695e+01 1.79366012e+01
+ 1.84623269e+01 1.89191894e+01 1.93013824e+01 1.96039735e+01
+ 1.98230100e+01 1.99556049e+01 2.00000000e+01 1.99556049e+01
+ 1.98230100e+01 1.96039735e+01 1.93013824e+01 1.89191894e+01
+ 1.84623269e+01 1.79366012e+01 1.73485695e+01 1.67054042e+01
+ 1.60147481e+01 1.52845633e+01 1.45229807e+01 1.37381511e+01
+ 1.29381035e+01 1.21306132e+01 1.13230830e+01 1.05224393e+01
+ 9.73504512e+00 8.96663128e+00 8.22224581e+00 7.50622198e+00
+ 6.82216396e+00 6.17294922e+00 5.56074601e+00 4.98704418e+00
+ 4.45269732e+00 3.95797398e+00 3.50261577e+00 3.08590011e+00
+ 2.70670566e+00]
+[3.73289382e+15 5.08386930e+15 6.89307366e+15 9.30467619e+15
+ 1.25043008e+16 1.67296694e+16 2.22835876e+16 2.95496720e+16
+ 3.90112639e+16 5.12739977e+16 6.70925256e+16 8.74019060e+16
+ 1.13354161e+17 1.46360484e+17 1.88139509e+17 2.40771999e+17
+ 3.06762136e+17 3.89105464e+17 4.91363292e+17 6.17743082e+17
+ 7.73184028e+17 9.63446626e+17 1.19520458e+18 1.47613691e+18
+ 1.81501756e+18 2.22179931e+18 2.70768803e+18 3.28520310e+18
+ 3.96821895e+18 4.77198238e+18 5.71310016e+18 6.80949095e+18
+ 8.08029577e+18 9.54574155e+18 1.12269526e+19 1.31457057e+19
+ 1.53241264e+19 1.77843235e+19 2.05479630e+19 2.36357834e+19
+ 2.70670566e+19 3.08590011e+19 3.50261577e+19 3.95797398e+19
+ 4.45269732e+19 4.98704418e+19 5.56074601e+19 6.17294922e+19
+ 6.82216396e+19 7.50622198e+19 8.22224581e+19 8.96663128e+19
+ 9.73504512e+19 1.05224393e+20 1.13230830e+20 1.21306132e+20
+ 1.29381035e+20 1.37381511e+20 1.45229807e+20 1.52845633e+20
+ 1.60147481e+20 1.67054042e+20 1.73485695e+20 1.79366012e+20
+ 1.84623269e+20 1.89191894e+20 1.93013824e+20 1.96039735e+20
+ 1.98230100e+20 1.99556049e+20 2.00000000e+20 1.99556049e+20
+ 1.98230100e+20 1.96039735e+20 1.93013824e+20 1.89191894e+20
+ 1.84623269e+20 1.79366012e+20 1.73485695e+20 1.67054042e+20
+ 1.60147481e+20 1.52845633e+20 1.45229807e+20 1.37381511e+20
+ 1.29381035e+20 1.21306132e+20 1.13230830e+20 1.05224393e+20
+ 9.73504512e+19 8.96663128e+19 8.22224581e+19 7.50622198e+19
+ 6.82216396e+19 6.17294922e+19 5.56074601e+19 4.98704418e+19
+ 4.45269732e+19 3.95797398e+19 3.50261577e+19 3.08590011e+19
+ 2.70670566e+19]
+rho sn_trans 4 100
+integrated :  1.506979772699639e+22
+PELLET step finished
+EQ step
+>>> efit.step() started
+INPUT: PRESSURE found kinetic , mapped value =  kinetic
+INPUT: RELAX_PROFILE not found, use default value: 0
+INPUT: RELAX_METRIC not found, use default value: 0.5
+INPUT: BETAN_TARGET not found, use default value: -1.0
+model_pressure = kinetic
+betan = 1.2225179142071112
+INPUT: TOPOLOGY found DN , mapped value =  DN
+INPUT: ERROR not found, use default value: 1.0e-4
+INPUT: MAX_EFIT_ERROR not found, use default value: 0.1
+init_run_step = 0
+niter =  10
+*** generate kfile 0
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+ip, ip cal, ip/(ip cal) = 10.000 10.003 1.000
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+run efit
+efit, subprocess
+elapsed time =  0.337  1.199
+error_efit = 9.642e-05
+*** generate kfile 1
+apply underrelaxation
+r0 = 4.55
+b0 = 11.0
+ip = 9999999.995
+inmtric under-relax: 0.5
+ip, ip cal, ip/(ip cal) = 10.000 10.000 1.000
+weigting upper xpoint: [2, 3, 4, 5]
+weigting lower xpoint: [9, 10, 11, 12]
+diff_p = 6.949785225854544e-05
+diff_f = 0.00013706821730189442
+converged
+Icurt=9.997e+00MA
+EQ step finished
+TR step
+fastran.step() entered
+update_next = disabled
+update_instate =  True
+[1, 1, 74]
+['D', 'T', 'W']
+ion D
+ion T
+imp W
+model_beam = 0
+dump_vol_profile : rho_nbi pbe 0.0
+dump_vol_profile : rho_nbi pbi 0.0
+dump_vol_profile : rho_nbi pbth 0.0
+dump_vol_profile : rho_nbi pbth 0.0
+dump_vol_profile : rho_fus pfuse 45427156.949402496
+dump_vol_profile : rho_fus pfusi 15431910.572126113
+dump_vol_profile : rho_fus pfusth 0.0
+dump_vol_profile : rho_ecrf peech 0.0
+dump_vol_profile : rho_icrf picrf_totals 13003422.154928172
+dump_vol_profile : rho_lhrf pelh 0.0
+S_name =  ['e                               ' 'D                               '
+ 'T                               ' 'W                               ']
+0 e                               
+1 D                               
+processing 1 D                               
+dump_vol_profile : rho_icrf picrf_totals 128.9856575066243
+2 T                               
+processing 2 T                               
+dump_vol_profile : rho_icrf picrf_totals 26996448.859414168
+3 W                               
+processing 3 W                               
+dump_vol_profile : rho_icrf picrf_totals 0.0
+dump_vol_profile : rho_lhrf pilh 0.0
+dump_vol_profile : rho_nbi tqbe 0.0
+dump_vol_profile : rho_nbi tqbi 0.0
+dump_vol_profile : rho_nbi tqbjxb 0.0
+dump_vol_profile : rho_nbi tqbth 0.0
+dump_vol_profile : rho_nbi sbedep 0.0
+dump_vol_profile : rho_nbi sbehalo 0.0
+dump_vol_profile : rho sn_trans 1.506979772699639e+22
+dump_vol_profile : rho_rad prad 0.0
+dump_vol_profile : rho pohme 0.0
+/global/common/software/atom/perlmutter/binaries/fastran/default/xfastran_ver1.00_ser
+ncpu =  1
+n1d  =  1
+nky  =  1
+[1, 1, 74]
+['D', 'T', 'W']
+ion D
+ion T
+imp W
+nspec_th = 3
+Icurt=1.000e+01MA
+Icurr_bootstrap=1.743e+00MA
+Icurr_ohmic=0.000e+00MA
+rho_fus pfuse 100 100
+integrated :  45607879.174309365
+rho_fus pfusi 100 100
+integrated :  15540255.783369135
+model_beam = 0
+density_model = 1: impurity = f*ne
+TR step finished
+
+========================================================================
+= fastran driver: finalize
+
+EQ0 finalize
+>>> efit.finalize() started
+EQ0 finalize finished
+TR0 finalize
+fastran.finalize() entered
+TR0 finalize finished
+IC finalize
+toric.finalize() called
+IC finalize finished
+PELLET finalize
+pellet_model.finalize() called
+PELLET finalize finished
+EQ finalize
+>>> efit.finalize() started
+EQ finalize finished
+TR finalize
+fastran.finalize() entered
+TR finalize finished
+********************************************************************************
+FASTRAN DIRVER FINALIZE
+/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_everythingevol/SCAN/work/plasma_state/a000001.00001
+/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_everythingevol/SCAN/work/plasma_state/s000001.00001
+/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_everythingevol/SCAN/work/plasma_state/g000001.00001
+/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_everythingevol/SCAN/work/plasma_state/i000001.00001
+/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_everythingevol/SCAN/work/plasma_state/k000001.00001
+/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_everythingevol/SCAN/work/plasma_state/f000001.00001
