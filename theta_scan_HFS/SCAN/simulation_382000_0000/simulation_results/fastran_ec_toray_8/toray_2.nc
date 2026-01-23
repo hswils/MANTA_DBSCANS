@@ -1,1 +1,0 @@
-../2/components/fastran_ec_toray_8/toray.nc
