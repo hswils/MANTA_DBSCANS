@@ -1,1 +1,0 @@
-../4/components/rf_ic_toric_36/toric_cfg.nc

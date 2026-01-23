@@ -1,1 +1,0 @@
-../4/components/fastran_tr_fastran_66/fastran.nc
