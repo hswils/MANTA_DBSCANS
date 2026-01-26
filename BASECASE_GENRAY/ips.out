@@ -6,12 +6,12 @@ Created <class 'fastran.solver.fastran.fastran'>
 Created <class 'fastran.constraint.constraint_current.constraint_current'>
 Created <class 'fastran.equilibrium.efit.efit'>
 Created <class 'fastran.heating.genray.genray'>
-IPS SLURM_NODES =  [('nid005800', 256)]
-2026-01-20 12:46:13,427 FRAMEWORK       WARNING  RM: listOfNodes = [('nid005800', 128)]
-2026-01-20 12:46:13,428 FRAMEWORK       WARNING  RM: max_ppn = 128 
-2026-01-20 12:46:13,428 FRAMEWORK       WARNING  Using user set procs per node: 128
-2026-01-20 12:46:13,428 FRAMEWORK       WARNING  RM: 1 nodes and 128 processors per node
-2026-01-20 12:46:13,501 FWK_COMP_PortalBridge_9 WARNING  Missing USER_W3_DIR configuration - disabling web-visible logging
+IPS SLURM_NODES =  [('nid006303', 256)]
+2026-01-26 09:57:32,423 FRAMEWORK       WARNING  RM: listOfNodes = [('nid006303', 128)]
+2026-01-26 09:57:32,424 FRAMEWORK       WARNING  RM: max_ppn = 128 
+2026-01-26 09:57:32,424 FRAMEWORK       WARNING  Using user set procs per node: 128
+2026-01-26 09:57:32,424 FRAMEWORK       WARNING  RM: 1 nodes and 128 processors per node
+2026-01-26 09:57:32,498 FWK_COMP_PortalBridge_9 WARNING  Missing USER_W3_DIR configuration - disabling web-visible logging
 fastran_init.init() started
 state_files: s000001.00001 g000001.00001 b000001.00001 i000001.00001
 create null s000001.00001
@@ -21,7 +21,7 @@ create null i000001.00001
 fastran_init.step() started
 tokamak_id = FPP
 shot_number = 000001
-INPUT_DIR = /pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_genray_cql3d/input
+INPUT_DIR = /pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_basecase_genray_fewercoils/input
 model_beam = 0
 start dakota update
 update_namelist called
@@ -67,12 +67,12 @@ Icurich=0.000e+00MA
 fastran_init.finalize() called
 ********************************************************************************
 FASTRAN DIRVER INIT
-2026-01-20 12:46:17,043 FWK_COMP_PortalBridge_9 ERROR    Portal Error: 999 HTTPSConnectionPool(host='lb.ipsportal.production.svc.spin.nersc.org', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1135)')))
 PORTS (all) = ['INIT', 'DRIVER', 'EQ0', 'TR0', 'BC0', 'EQ', 'LH']
 PORTS = ['INIT', 'DRIVER', 'EQ0', 'TR0', 'BC0', 'EQ', 'LH']
 SIMULATION_MODE = NORMAL
 *** t0 = 0
 EQ0 init ********
+2026-01-26 09:57:33,043 FWK_COMP_PortalBridge_9 ERROR    Portal Error: 999 HTTPSConnectionPool(host='lb.ipsportal.production.svc.spin.nersc.org', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1135)')))
 >>> efit.init() started
 INPUT: SCALE found 1 , mapped value =  enabled
 INPUT: R0_SCALE found 1.7 , mapped value =  1.7
@@ -81,14 +81,12 @@ efit time = 1
 init_run =  1
 force free
 scaled  1.7 2.0
-2026-01-20 12:46:17,556 FWK_COMP_PortalBridge_9 ERROR    Portal Error: 999 HTTPSConnectionPool(host='lb.ipsportal.production.svc.spin.nersc.org', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1135)')))
+2026-01-26 09:57:33,556 FWK_COMP_PortalBridge_9 ERROR    Portal Error: 999 HTTPSConnectionPool(host='lb.ipsportal.production.svc.spin.nersc.org', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1135)')))
 ps_update disabled
 Icurt=2.862e+00MA
 TR0 init ********
 fastran.init() entered
 BC0 init ********
-2026-01-20 12:46:19,603 FWK_COMP_PortalBridge_9 ERROR    Portal Error: 999 HTTPSConnectionPool(host='lb.ipsportal.production.svc.spin.nersc.org', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1135)')))
-2026-01-20 12:46:19,603 FWK_COMP_PortalBridge_9 ERROR    Disabling portal because: Too many consecutive failed connections
 constraint_current.init() done
 EQ init ********
 >>> efit.init() started
@@ -106,6 +104,8 @@ nstep_pre: 1
 
 EQ0 step
 >>> efit.step() started
+2026-01-26 09:57:35,092 FWK_COMP_PortalBridge_9 ERROR    Portal Error: 999 HTTPSConnectionPool(host='lb.ipsportal.production.svc.spin.nersc.org', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1135)')))
+2026-01-26 09:57:35,092 FWK_COMP_PortalBridge_9 ERROR    Disabling portal because: Too many consecutive failed connections
 INPUT: PRESSURE found kinetic , mapped value =  kinetic
 INPUT: RELAX_PROFILE not found, use default value: 0
 INPUT: RELAX_METRIC not found, use default value: 0.5
@@ -126,7 +126,7 @@ weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
 run efit
 efit, subprocess
-elapsed time =  0.345  1.342
+elapsed time =  0.396  1.234
 error_efit = 9.626e-05
 *** generate kfile 1
 apply underrelaxation
@@ -141,7 +141,7 @@ diff_p = 0.12302469702846236
 diff_f = 0.37169332260301075
 run efit
 efit, subprocess
-elapsed time =  0.381  1.244
+elapsed time =  0.374  1.222
 error_efit = 8.699e-05
 *** generate kfile 2
 apply underrelaxation
@@ -156,7 +156,7 @@ diff_p = 0.11130958943724463
 diff_f = 0.25161178632471504
 run efit
 efit, subprocess
-elapsed time =  0.363  1.186
+elapsed time =  0.364  1.182
 error_efit = 9.028e-05
 *** generate kfile 3
 apply underrelaxation
@@ -171,7 +171,7 @@ diff_p = 0.07602601139355432
 diff_f = 0.14111719164843928
 run efit
 efit, subprocess
-elapsed time =  0.362  1.161
+elapsed time =  0.363  1.157
 error_efit = 9.379e-05
 *** generate kfile 4
 apply underrelaxation
@@ -250,7 +250,7 @@ diff_p = 0.04534630995595295
 diff_f = 0.07640443288298947
 run efit
 efit, subprocess
-elapsed time =  0.367  1.197
+elapsed time =  0.360  1.203
 error_efit = 9.512e-05
 *** generate kfile 5
 apply underrelaxation
@@ -265,7 +265,7 @@ diff_p = 0.024814746438193768
 diff_f = 0.04059922846899693
 run efit
 efit, subprocess
-elapsed time =  0.362  1.222
+elapsed time =  0.360  1.203
 error_efit = 7.229e-05
 *** generate kfile 6
 apply underrelaxation
@@ -280,7 +280,7 @@ diff_p = 0.012740493836810475
 diff_f = 0.021217200274979486
 run efit
 efit, subprocess
-elapsed time =  0.361  1.208
+elapsed time =  0.369  1.178
 error_efit = 7.078e-05
 *** generate kfile 7
 apply underrelaxation
@@ -295,7 +295,7 @@ diff_p = 0.0062516312844540746
 diff_f = 0.010939413644357498
 run efit
 efit, subprocess
-elapsed time =  0.362  1.171
+elapsed time =  0.361  1.144
 error_efit = 9.865e-05
 *** generate kfile 8
 apply underrelaxation
@@ -420,7 +420,7 @@ weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
 run efit
 efit, subprocess
-elapsed time =  0.335  1.264
+elapsed time =  0.334  1.213
 error_efit = 7.949e-05
 *** generate kfile 1
 apply underrelaxation
@@ -435,7 +435,7 @@ diff_p = 0.04421504516769
 diff_f = 0.059572975897179574
 run efit
 efit, subprocess
-elapsed time =  0.364  1.255
+elapsed time =  0.373  1.250
 error_efit = 7.787e-05
 *** generate kfile 2
 apply underrelaxation
@@ -450,7 +450,7 @@ diff_p = 0.04165198762409889
 diff_f = 0.05652657761593236
 run efit
 efit, subprocess
-elapsed time =  0.383  1.217
+elapsed time =  0.372  1.187
 error_efit = 9.097e-05
 *** generate kfile 3
 apply underrelaxation
@@ -465,7 +465,7 @@ diff_p = 0.027630667996603873
 diff_f = 0.03516789303401426
 run efit
 efit, subprocess
-elapsed time =  0.367  1.276
+elapsed time =  0.365  1.190
 error_efit = 9.917e-05
 *** generate kfile 4
 apply underrelaxation
@@ -480,7 +480,7 @@ diff_p = 0.01608977464702593
 diff_f = 0.017365631657062605
 run efit
 efit, subprocess
-elapsed time =  0.368  1.270
+elapsed time =  0.365  1.220
 error_efit = 7.618e-05
 *** generate kfile 5
 apply underrelaxation
@@ -605,7 +605,7 @@ weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
 run efit
 efit, subprocess
-elapsed time =  0.330  1.288
+elapsed time =  0.332  1.214
 error_efit = 7.154e-05
 *** generate kfile 1
 apply underrelaxation
@@ -666,7 +666,7 @@ weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
 run efit
 efit, subprocess
-elapsed time =  0.337  1.285
+elapsed time =  0.330  1.220
 error_efit = 7.284e-05
 *** generate kfile 1
 apply underrelaxation
@@ -791,7 +791,7 @@ weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
 run efit
 efit, subprocess
-elapsed time =  0.325  1.486
+elapsed time =  0.331  1.328
 error_efit = 7.257e-05
 *** generate kfile 1
 apply underrelaxation
@@ -852,7 +852,7 @@ weigting upper xpoint: [2, 3, 4, 5]
 weigting lower xpoint: [9, 10, 11, 12]
 run efit
 efit, subprocess
-elapsed time =  0.326  1.351
+elapsed time =  0.331  1.247
 error_efit = 7.876e-05
 *** generate kfile 1
 apply underrelaxation
@@ -972,11 +972,11 @@ genray.finalize() called
 LH finalize finished
 ********************************************************************************
 FASTRAN DIRVER FINALIZE
-/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_genray_cql3d/SCAN/work/plasma_state/a000001.00001
-/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_genray_cql3d/SCAN/work/plasma_state/b000001.00001
-/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_genray_cql3d/SCAN/work/plasma_state/s000001.00001
-/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_genray_cql3d/SCAN/work/plasma_state/g000001.00001
-/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_genray_cql3d/SCAN/work/plasma_state/i000001.00001
-/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_genray_cql3d/SCAN/work/plasma_state/k000001.00001
-/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_genray_cql3d/SCAN/work/plasma_state/genray.nc
-/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_genray_cql3d/SCAN/work/plasma_state/f000001.00001
+/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_basecase_genray_fewercoils/SCAN/work/plasma_state/a000001.00001
+/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_basecase_genray_fewercoils/SCAN/work/plasma_state/b000001.00001
+/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_basecase_genray_fewercoils/SCAN/work/plasma_state/s000001.00001
+/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_basecase_genray_fewercoils/SCAN/work/plasma_state/g000001.00001
+/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_basecase_genray_fewercoils/SCAN/work/plasma_state/i000001.00001
+/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_basecase_genray_fewercoils/SCAN/work/plasma_state/k000001.00001
+/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_basecase_genray_fewercoils/SCAN/work/plasma_state/genray.nc
+/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/test_basecase_genray_fewercoils/SCAN/work/plasma_state/f000001.00001
