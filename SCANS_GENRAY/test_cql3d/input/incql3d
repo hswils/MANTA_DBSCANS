@@ -1,0 +1,322 @@
+! CQL3D TEMPLATE for IPS-FASTRAN
+! From DIII-D HFS LH case
+
+&setup0
+ ibox = 'perlmutter'
+ iuser = 'ips_fastran'
+ ioutput = 6
+ noplots = 'enabled'
+ mnemonic = 'cql3d'           !---
+ nlwritf = 'ncdfdist'         !---
+ nlrestrt = 'disabled'        !---
+ lrz = 25                     !---
+&end
+ 
+&setup
+ acoefne = -1.8 -7.83 51.57 -353.68
+ acoefte = 8.01 -13.6 8.69 -114.59
+ bnumb(1) = -1.0
+ bnumb(2) = 1.0
+ bnumb(3) = -1.0
+ bootst = 'disabled'
+ bth = 1000.0
+ btor = 10320.0
+ chang = 'noneg'
+ colmodl = 3
+ contrmin = 1.e-12
+ nstop = 10                   !---
+ dtr = 0.01                   !---
+ dtr1 = 1.0e-3 0.1e-3 0.01e-3 !---
+ nondtr1 = 10 20 30 40        !---
+ eegy(1,1,1,1) = 0.0
+ eegy(1,2,1,1) = 2.0
+ eegy(2,1,1,1) = 0.0
+ eegy(2,2,1,1) = 6.0
+ elecfld(0) = 0.0
+ elecfld(1) = 0.0
+ enloss(1) = 200.0
+ enmax = 205.0
+ enmin = 25.0
+ enorm = 2500.0
+ eoved = 0.0
+ ephicc = 1.0
+ fds = 0.2
+ fmass(1) = 9.1095e-28
+ fmass(2) = 3.3435834581e-24
+ fmass(3) = 9.1095e-28
+ gamaset = 0.0
+ gsla = 270.0
+ gslb = 35.0
+ iactst = 'enabled'
+ idskf = 'disabled'
+ idskrf = 'disabled'
+ implct = 'enabled'
+ ineg = 'disabled'
+ iproelec = 'parabola'
+ iprone = 'spline'
+ iprote = 'spline'
+ iproti = 'spline'
+ iprozeff = 'spline'
+ irzplt(1) = 2
+ irzplt(2) = 6
+ irzplt(3) = 10
+ irzplt(4) = 14
+ irzplt(5) = 16
+ irzplt(6) = 18
+ izeff =  'backgrnd'
+ kfrsou =  0
+ kpress(2) = 'enabled'
+ iy = 240                     !---
+ jx = 320                     !---
+ kspeci(1,1) = 'e'            !---
+ kspeci(2,1) = 'general'      !---
+ kspeci(1,2) = 'D'            !---
+ kspeci(2,2) = 'maxwell'      !---
+ kspeci(1,3) = 'e'            !---
+ kspeci(2,3) = 'maxwell'      !---
+ lbdry(1) = 'conserv'
+ locquas = 'disabled'
+ lossmode(1) = 'disabled'
+ lz = 80
+ machine = 'toroidal'
+ manymat = 'disabled'
+ meshy = 'fixed_y'
+ mpwr = 0.1 1.0 1.0 1.0
+ mx = 3
+ nchec = 1
+ ncoef = 1
+ ncont = 20
+ nen = 19
+ netcdfnm = 'LH.nc'
+ ngen = 1                     !---
+ nmax = 2                     !---
+ njene = 51                   !---
+ noffel = 10000
+ nonel = 0
+ nplot = 13
+ nplt3d = 13
+ npwr = 2.0 2.0 2.0 2.0
+ nrskip = 0
+ nrstrt = 1
+ numby = 30
+ nv = 32
+ partner ='bramb'
+ plt3d = 'enabled'
+ pltd = 'enabled'
+ pltdn = 'disabled'
+ pltend = 'enabled'
+ pltfvs = 'enabled'
+ pltinput = 'enabled'
+ pltmag = 1.0
+ pltpowe = 'last'
+ pltprpp = 'disabled'
+ pltrst = 'disabled'
+ pltstrm = 'disabled'
+ pltvecal = 'disabled'
+ pltvecc = 'disabled'
+ pltvece = 'disabled'
+ pltvecrf = 'disabled'
+ pltvflu = 'disabled'
+ pltvs = 'rho'
+ profpsi = 'disabled'
+ psimodel = 'spline'
+ qsineut = 'disabled'
+ radmaj = 700.0
+ radmin = 250.0
+ rd = 40.0
+ radcoord = "sqtorflx" ! "sqpolflx"
+ reden(1,0) = 2.25e+13
+ reden(1,1) = 2e+12
+ reden(2,0) = 1.125e+13
+ reden(2,1) = 1e+12
+ reden(3,0) = 2.25e+13
+ reden(3,1) = 2e+12
+ relativ = 'enabled'
+ rfacz = 1.0
+ rmirror = 7.5
+ rovera = 1e-06
+ roveram = 0.0
+ rzset = 'enabled'
+ softxry = 'enabled'
+ syncrad = 'disabled'
+ tauloss(1,1) = 0.3
+ tauloss(2,1) = 0.0
+ tauloss(3,1) = 0.0
+ tbnd = 0.002
+ temp(1,0) = 0.8
+ temp(1,1) = 0.05
+ temp(2,0) = 0.45
+ temp(2,1) = 0.05
+ temp(3,0) = 0.8
+ temp(3,1) = 0.05
+ tfac = 0.75
+ tfacz = 1.0
+ thet1 = 75.5 76.4 77.4 78.3 79.2 80.2 81.1 82.0 83.0 83.9 84.9 85.8 86.7
+     87.7 88.6 89.5 90.5 91.4 92.4 93.3 94.2 95.2 96.1 97.0 98.0 98.9 99.9
+     100.8 101.7 102.7 103.6 104.5
+ thet2 =  177.2 177.2 177.2 177.2 177.2 177.2 177.2 177.2 177.2 177.2
+     177.2 177.2 177.2 177.2 177.2 177.2 177.2 177.2 177.2 177.2 177.2
+     177.2 177.2 177.2 177.2 177.2 177.2 177.2 177.2 177.2 177.2 177.2
+ thetd = 0.0
+ torloss(1) = 'disabled'
+ veclnth = 1.5
+ xfac = 0.5
+ xlwr = 0.085
+ xmdl = 0.25
+ xpctlwr = 0.1
+ xpctmdl = 0.4
+ ylower = 1.22
+ yreset = 'disabled'
+ yupper = 1.275
+ zmax = 408.0
+ x_sxr = 187.0
+ z_sxr = 0.0
+
+ rya(1) =  0.05 0.1 0.2 0.3 0.4 0.5 0.55 0.575 0.6 0.61 0.625 0.64 0.65
+     0.66 0.675 0.7 0.725 0.75 0.775 0.8 0.825 0.85 0.875 0.9 0.95
+ ryain = 0.0 0.02 0.04 0.06 0.08 0.1 0.12 0.14 0.16 0.18 0.2 0.22 0.24
+     0.26 0.28 0.3 0.32 0.34 0.36 0.38 0.4 0.42 0.44 0.46 0.48 0.5 0.52
+     0.54 0.56 0.58 0.6 0.62 0.64 0.66 0.68 0.7 0.72 0.74 0.76 0.78 0.8
+     0.82 0.84 0.86 0.88 0.9 0.92 0.94 0.96 0.98 1.0
+ enein(1,1) =  6e+13 5.99629412375e+13 5.98672505663e+13 5.97038384521e+13
+     5.9485184853e+13 5.92055565691e+13 5.88725912097e+13
+     5.84851065575e+13 5.80455313706e+13 5.75585735779e+13
+     5.70201882429e+13 5.64386399888e+13 5.58135732927e+13
+     5.51469553408e+13 5.44448378776e+13 5.37099461804e+13
+     5.29450270917e+13 5.21581124157e+13 5.13546261091e+13
+     5.0540946881e+13 4.97237100072e+13 4.8910511576e+13 4.81084976315e+13
+     4.73240155476e+13 4.65642965601e+13 4.58364177964e+13
+     4.51440127232e+13 4.44911645891e+13 4.38832040167e+13
+     4.33235515565e+13 4.28122893192e+13 4.23521518109e+13
+     4.1951558843e+13 4.16095725564e+13 4.13315505508e+13
+     4.11260593343e+13 4.10043518369e+13 4.0967930526e+13
+     4.10012466508e+13 4.10778058338e+13 4.11645459826e+13
+     4.12196662591e+13 4.11896281091e+13 4.09907800182e+13
+     4.05298817598e+13 3.96350903957e+13 3.80879585087e+13
+     3.55302242629e+13 3.1393189053e+13 2.51744330559e+13
+     1.67956375545e+13
+ tein =  4.44281005859 4.43925062899 4.43002880823 4.41419954312
+     4.39292066798 4.3655572702 4.33279584511 4.29443955291 4.25064522772
+     4.20181505414 4.14740314882 4.08818854875 4.02400142493 3.95489433261
+     3.88140403111 3.80366320563 3.72173074365 3.63636384601 3.54797468075
+     3.45708375922 3.36412018512 3.26984807583 3.17490203484 3.07984626437
+     2.98529582683 2.89187263966 2.7999924582 2.71002902634 2.62236602787
+     2.53721538174 2.45456813656 2.37451393386 2.29738309543 2.22305211367
+     2.1517115285 2.08369714598 2.01948207746 1.95939384729 1.90409475533
+     1.85436201111 1.80979032805 1.76817574884 1.72655828205 1.68062782074
+     1.62505517035 1.55074463971 1.44555848629 1.28791463034 1.03491702324
+     0.616721839132 0.109689237026
+ tescal = 1.0
+ tiin = 6.0653834343 6.06631798997 6.06834051272 6.07084217261
+     6.07299722817 6.07392299406 6.07288349166 6.0688991198 6.0609753474
+     6.04842815255 6.02942125187 6.00358493446 5.96930977884 5.9248836704
+     5.86962111498 5.8019186551 5.71959963599 5.62413057667 5.51630887791
+     5.39716614475 5.26723906842 5.12860846823 4.98272073594 4.83096087197
+     4.67469689558 4.51543327574 4.35461263385 4.19335811088 4.03264929884
+     3.87328733614 3.7157768525 3.56056526025 3.40834778435 3.2593679696
+     3.11418460977 2.97359116869 2.8386773354 2.71036160842 2.59014460271
+     2.47997717929 2.3818070352 2.29444510725 2.2143298017 2.13665130338
+     2.05456197852 1.95740941717 1.83000269628 1.64765561443 1.36973827538
+     0.945753686226 0.361718651325
+ elecin(1) = 101*0.0 
+ zeffin = 101*2.0
+ &end
+ 
+&trsetup
+ adimeth = 'disabled'
+ difusr = 400.0
+ difus_rshape(1) = 1.0 0.0 0.0 0.0 0.0 0.0 0.0
+ difus_vshape(1) = 1.0 0.0 0.0 3.0
+ nontran = 11
+ pinch = 'case3n'
+ relaxden = 0.001
+ relaxtsp = 'disabled'
+ transp = 'disabled'
+ advectr = 1.0
+&end
+ 
+&sousetup
+ noffso(1,1) = 10000
+ noffso(1,2) = 10000
+ nonso(1,1) = 0
+ nonso(1,2) = 0
+ nso = 0
+ nsou = 1
+ pltso = 'enabled'
+ soucoord = 'disabled'
+ komodel = 'mr'
+ flemodel = 'pol'
+ knockon = 'disabled'
+ jfl = 320                  !-- 350
+ nkorfn = 1
+ nonko = 0
+ noffko = 10000
+ soffvte = -3.0
+ soffpr = 0.5
+ isoucof = 1
+ faccof = 0.5
+ xlfac = -0.5
+ xllwr = 0.0005
+ xlmdl = 0.05
+ xlpctlwr = 0.15
+ xlpctmdl = 0.6
+&end
+ 
+&eqsetup
+ atol = 1e-08
+ bsign = 1.0
+ ellptcty = 0.0
+ eqmod = 'enabled'
+ eqpower = 2
+ eqsource = 'eqdsk'
+ eqdskin = "eqdsk"
+ fpsimodl = 'constant'
+ methflag = 10
+ nconteq = 'psigrid'
+ nconteqn = 0
+ rbox = 92.0
+ rboxdst = 120.0
+ rmag = 166.0
+ rtol = 1e-08
+ zbox = 92.0
+&end
+ 
+&rfsetup
+ call_lh = 'disabled'
+ call_ech = 'disabled'
+ call_fw = 'disabled'
+ lh = 'enabled'
+ ech = 'disabled'
+ fw = 'disabled'
+ iurfl = 'disabled'
+ iurfcoll = 'enabled'
+ nbssltbl = 2000
+ nharms = 1
+ nharm1 = 0
+ nrfitr1 = 1000
+ nrfitr2 = 0
+ nrfitr3 = 1
+ nrfpwr =  0
+ nrfstep1(1) = 1000
+ nrfstep1(2) = 1000
+ nrfstep2 = 0
+ noffrf(1) = 100000
+ nonrf(1) = 0
+ nrf = 0
+ pwrscale(1) = 1.0
+ pwrscale(2) = 1.0
+ rfread = 'netcdf'
+ rffile(1) ='genray.nc'      !---
+ scaleurf = 'enabled'
+ urfdmp = 'secondd'
+ urfmod = 'enabled'
+ vlfmod = 'disabled'
+ vlhmod = 'disabled'
+ vparmax = 0.7956
+ vparmin = 0.1768
+ vprprop = 'disabled'
+ rdcscale = 10*0.0           !---
+&end
+ 
+&frsetup
+&end
