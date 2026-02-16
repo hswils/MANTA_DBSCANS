@@ -1,1 +1,0 @@
-../2/components/fastran_lh_genray_24/genray.nc

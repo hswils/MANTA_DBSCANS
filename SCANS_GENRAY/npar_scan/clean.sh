@@ -5,3 +5,4 @@ rm -rf params.in.*
 rm -rf SUMMARY
 rm -rf SCAN
 rm -rf results.out*
+rm -rf summary
