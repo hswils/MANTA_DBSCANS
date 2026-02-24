@@ -1,0 +1,67 @@
+{
+  "scan": {
+    "npar": {"type": "range", "ymin":-2.0, "ymax":-1.4, "ndata":3},
+    "thgrill":{"type": "range", "ymin":140, "ymax":220, "ndata":3}
+  },
+
+  "const": {
+    "a"       : 1.2,
+    "r"       : 4.55,
+    "kappa"   : 1.4,
+    "delta"   : -0.5,
+
+    "bt"      : 11.0,
+    "ip"      : 10.0, 
+
+    "xwid"    : 0.1,
+    "xmid"    : 0.95,
+
+    "ne_axis" : 27.6,
+    "ne_sep"  : 9.0,
+    "ne_ped"  : 14.42,
+    "te_axis" : 18.8,
+    "te_ped"  : 3.745,
+    "ti_axis" : 19.0,
+    "h98"     : 0.8,
+
+    "delnpar" : 0.25
+
+ },
+
+ "model": {
+    "ti_ped"      : ["expr", "te_ped"                     ],
+    "ngw"         : ["base", {}                           ],
+    "anmin"       : ["expr", "npar - delnpar * .5"          ],
+    "anmax"       : ["expr", "npar + delnpar * .5"          ]
+  },
+
+ "io": {
+    "index"       : ["efit"        , "TIME_ID"    ],
+
+    "r"           : ["fastran_init", "R0"         ],
+    "a"           : ["fastran_init", "A0"         ],
+    "kappa"       : ["fastran_init", "KAPPA"      ],
+    "delta"       : ["fastran_init", "DELTA"      ],
+
+    "bt"          : ["fastran_init", "B0"         ],
+    "ip"          : ["fastran_init", "IP"         ],
+
+    "xwid"        : ["fastran_init", "XWID"       ],
+    "xmid"        : ["fastran_init", "XMID"       ],
+
+    "ne_axis"     : ["fastran_init", "NE_AXIS"    ],
+    "ne_ped"      : ["fastran_init", "NE_PED"     ],
+    "ne_sep"      : ["fastran_init", "NE_SEP"     ],
+
+    "te_axis"     : ["fastran_init", "TE_AXIS"    ],
+    "te_ped"      : ["fastran_init", "TE_PED"     ],
+
+    "ti_axis"     : ["fastran_init", "TI_AXIS"    ],
+    "ti_ped"      : ["fastran_init", "TI_PED"     ],
+
+    "h98"         : ["fastran_init", "H98_TARGET" ],
+    "anmin"       : ["genray_lh"   , "GRILL_ANMIN_0" ],
+    "anmax"       : ["genray_lh"   , "GRILL_ANMAX_0" ],
+    "thgrill"     : ["genray_lh"   , "GRILL_THGRILL_0" ]
+  }
+}
