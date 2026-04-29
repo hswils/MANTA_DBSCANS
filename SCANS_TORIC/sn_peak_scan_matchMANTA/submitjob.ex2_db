@@ -2,7 +2,7 @@
 #SBATCH -A m4527
 #SBATCH -q regular
 #SBATCH -N 3
-#SBATCH -t 00:30:00
+#SBATCH -t 01:30:00
 #SBATCH -J ips_fastran
 #SBATCH -e ips.err
 #SBATCH -o ips.out
@@ -10,7 +10,7 @@
 
 module load python
 source activate /global/common/software/atom/perlmutter/cesol/conda/dev
-
+export PYTHONPATH=${PYTHONPATH}:/pscratch/sd/h/hswils/github_repos/ips-fastran/src
 export SHOT_NUMBER=000001
 export TIME_ID=00001
 export FASTRAN_BIN_NAME=xfastran_ver1.06
