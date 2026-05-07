@@ -1,0 +1,17 @@
+#!/bin/bash -l
+#SBATCH -p debug
+#SBATCH -N 1
+#SBATCH -t 00:01:00
+#SBATCH -J ips_fastran
+#SBATCH -e ips.err
+#SBATCH -o ips.out
+#SBATCH -C cpu
+
+module load python
+source activate /global/common/software/atom/perlmutter/cesol/conda/dev
+
+export PATH=$PATH:/pscratch/sd/h/hswils/github_repos/MANTA_DBSCANS/RAD_KrWHe3He4_coronal
+export SHOT_NUMBER=000001
+export TIME_ID=00001
+
+ips.py --simulation=fastran_scenario.config --platform=$MACHINE_CONFIG
