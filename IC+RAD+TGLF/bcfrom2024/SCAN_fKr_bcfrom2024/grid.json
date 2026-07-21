@@ -1,0 +1,43 @@
+{
+  "scan": {
+    "fKr": {"type": "range", "ymin":0.0005, "ymax":0.001, "ndata":6}
+  },
+
+  "const": {
+    "a"       : 1.2,
+    "r"       : 4.55,
+    "kappa"   : 1.4,
+    "delta"   : -0.5,
+
+    "bt"      : 11.0,
+    "ip"      : 10.0, 
+
+    "xwid"    : 0.1,
+    "xmid"    : 0.95,
+
+    "h98"     : 0.8
+ },
+
+ "model": {
+    "ngw"         : ["base", {}                           ]
+  },
+
+ "io": {
+    "index"       : ["efit"        , "TIME_ID"    ],
+
+    "r"           : ["fastran_init", "R0"         ],
+    "a"           : ["fastran_init", "A0"         ],
+    "kappa"       : ["fastran_init", "KAPPA"      ],
+    "delta"       : ["fastran_init", "DELTA"      ],
+
+    "bt"          : ["fastran_init", "B0"         ],
+    "ip"          : ["fastran_init", "IP"         ],
+
+    "xwid"        : ["fastran_init", "XWID"       ],
+    "xmid"        : ["fastran_init", "XMID"       ],
+
+    "h98"         : ["fastran_init", "H98_TARGET" ],
+
+    "fKr"         : ["fastran_init", "F_IMP_1"    ]
+  }
+}
